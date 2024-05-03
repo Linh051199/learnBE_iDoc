@@ -1,0 +1,16 @@
+e:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\DVN.AUD.Constants\bin\Debug\DVN.AUD.Constants.dll
+e:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\DVN.AUD.Constants\bin\Debug\DVN.AUD.Constants.pdb
+e:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\DVN.AUD.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
+e:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\DVN.AUD.Constants\obj\Debug\DVN.AUD.Constants.dll
+e:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\DVN.AUD.Constants\obj\Debug\DVN.AUD.Constants.pdb
+E:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.dll
+E:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.pdb
+E:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
+E:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.dll
+E:\Allprjs\idocNet\19.Biz.Training\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.pdb
+D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.dll
+D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.pdb
+D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.AssemblyReference.cache
+D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
+D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.dll
+D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.pdb

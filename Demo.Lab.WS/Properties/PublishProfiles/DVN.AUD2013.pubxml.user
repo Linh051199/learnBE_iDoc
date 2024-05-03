@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>e:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\01.Publish\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/CommonUtils.dll">
+      <publishTime>12/17/2019 11:43:00</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.Biz.dll">
+      <publishTime>09/12/2022 13:52:34</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.Biz.pdb">
+      <publishTime>09/12/2022 13:52:34</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.Constants.dll">
+      <publishTime>09/12/2022 13:52:33</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.Constants.pdb">
+      <publishTime>09/12/2022 13:52:33</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.Utils.dll">
+      <publishTime>09/12/2022 13:52:34</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.Utils.pdb">
+      <publishTime>09/12/2022 13:52:34</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.WS.dll">
+      <publishTime>09/12/2022 13:52:35</publishTime>
+    </File>
+    <File Include="bin/DVN.AUD.WS.pdb">
+      <publishTime>09/12/2022 13:52:35</publishTime>
+    </File>
+    <File Include="bin/EncryptionLib.dll">
+      <publishTime>12/17/2019 11:43:00</publishTime>
+    </File>
+    <File Include="bin/EzDAL.dll">
+      <publishTime>12/17/2019 11:43:01</publishTime>
+    </File>
+    <File Include="bin/EzSql.dll">
+      <publishTime>12/17/2019 11:43:01</publishTime>
+    </File>
+    <File Include="bin/EzSqlServer.dll">
+      <publishTime>12/17/2019 11:43:01</publishTime>
+    </File>
+    <File Include="bin/TLog.Core.dll">
+      <publishTime>12/17/2019 11:43:00</publishTime>
+    </File>
+    <File Include="bin/TSession.Core.dll">
+      <publishTime>12/17/2019 11:43:00</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/17/2019 11:42:59</publishTime>
+    </File>
+    <File Include="WS.asmx">
+      <publishTime>12/17/2019 11:42:59</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

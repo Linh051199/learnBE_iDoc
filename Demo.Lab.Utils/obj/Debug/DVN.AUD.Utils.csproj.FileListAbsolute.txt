@@ -1,0 +1,16 @@
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\DVN.AUD.Utils.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\DVN.AUD.Utils.pdb
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\CommonUtils.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\DVN.AUD.Constants.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\EncryptionLib.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\EzDAL.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\EzSql.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\EzSqlServer.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\TLog.Core.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\TSession.Core.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\bin\Debug\DVN.AUD.Constants.pdb
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\obj\Debug\DVN.AUD.Utils.csprojAssemblyReference.cache
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\obj\Debug\DVN.AUD.Utils.csproj.CoreCompileInputs.cache
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\obj\Debug\DVN.AUD.Utils.csproj.CopyComplete
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\obj\Debug\DVN.AUD.Utils.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Utils\obj\Debug\DVN.AUD.Utils.pdb

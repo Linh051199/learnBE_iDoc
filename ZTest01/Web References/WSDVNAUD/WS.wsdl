@@ -1,0 +1,2426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Cm_Reinit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strBiz_SpecialPw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_ReinitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cm_ReinitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="Cm_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cm_TestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_GetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_GetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cm_GetIdResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Cm_GetDTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_GetDTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cm_GetDTimeResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Common_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFilter0" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFilter1" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFilter2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Common_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Common_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_Test_Load">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrobjParams" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cm_Test_LoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cm_Test_LoadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Seq_Common_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSequenceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strParam_Prefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strParam_Postfix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Seq_Common_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Seq_Common_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_AreaMarket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_AreaMarket_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCodeParent" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaDesc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_AreaMarket_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCodeParent" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaDesc" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaStatus" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_AreaMarket_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_AreaMarket_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_AreaMarket_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_Distributor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Distributor_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCodeParent" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBContactName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBFaxNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBMobilePhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBSMSPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBTaxCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objRemark" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDiscountPercent" />
+            <s:element minOccurs="0" maxOccurs="1" name="objBalance" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOverdraftThreshold" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Distributor_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCodeParent" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBContactName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBFaxNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBMobilePhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBSMSPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBTaxCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objRemark" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBStatus" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDiscountPercent" />
+            <s:element minOccurs="0" maxOccurs="1" name="objBalance" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOverdraftThreshold" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Distributor_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Distributor_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Distributor_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_Outlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_StarShopHist" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_OL_SignBoardsHist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Outlet_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerDateBirth" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerSignImagePath" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLTaxCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdCardNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdCardFrontImagePath" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdCardRearImagePath" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLFaxNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLMobilePhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLSMSPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLBankAccountNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLBankName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objRemark" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Outlet_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerDateBirth" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerSignImagePath" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLTaxCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdCardNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdCardFrontImagePath" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdCardRearImagePath" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLOwnerIdAddress" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLFaxNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLMobilePhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLSMSPhoneNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLBankAccountNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLBankName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objRemark" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLStatus" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Outlet_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOLCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Outlet_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Outlet_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_Province" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Province_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceName" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Province_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagActive" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Province_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_Province_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_Province_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_District" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_District_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictName" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_District_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objProvinceCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagActive" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_District_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDistrictCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_District_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_District_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_ActionType_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Mst_ActionType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_ActionType_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_ActionType_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_ActionType_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objActionType" />
+            <s:element minOccurs="0" maxOccurs="1" name="objActionTypeDesc" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAvgScoreValStart" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_ActionType_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_ActionType_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_ActionType_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objActionType" />
+            <s:element minOccurs="0" maxOccurs="1" name="objActionTypeDesc" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAvgScoreValStart" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagActive" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mst_ActionType_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mst_ActionType_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lic_Session_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Lic_Session" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lic_Session_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lic_Session_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lic_Session_Del">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId_Del" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lic_Session_DelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lic_Session_DelResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserPasswordOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserPasswordNew" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_ChangePasswordResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_GetForCurrentUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_GetForCurrentUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_GetForCurrentUserResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRootSvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRootUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLanguageCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOtherInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_LoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_LogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_LogoutResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_UserInGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Get_01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_UserInGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Get_01Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_Get_01Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserPassword" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagSysAdmin" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagDBAdmin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Upd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDBCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAreaCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserPassword" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagSysAdmin" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagDBAdmin" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagActive" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_UpdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_UpdResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_User_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_User_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_Group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_UserInGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Group_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupName" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Group_CreateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupName" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFlagActive" />
+            <s:element minOccurs="0" maxOccurs="1" name="objFt_Cols_Upd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Group_UpdateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Group_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Group_DeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_UserInGroup_Save">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrobjDSData" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_UserInGroup_SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_UserInGroup_SaveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Access_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_Access" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Access_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Access_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Access_Save">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objGroupCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrobjDSData" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Access_SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Access_SaveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Object_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGwUserCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGwPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_RecordCount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFt_WhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRt_Cols_Sys_Access" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sys_Object_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sys_Object_GetResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Cm_ReinitSoapIn">
+    <wsdl:part name="parameters" element="tns:Cm_Reinit" />
+  </wsdl:message>
+  <wsdl:message name="Cm_ReinitSoapOut">
+    <wsdl:part name="parameters" element="tns:Cm_ReinitResponse" />
+  </wsdl:message>
+  <wsdl:message name="Cm_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Cm_Test" />
+  </wsdl:message>
+  <wsdl:message name="Cm_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:Cm_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Cm_GetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Cm_GetId" />
+  </wsdl:message>
+  <wsdl:message name="Cm_GetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Cm_GetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Cm_GetDTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:Cm_GetDTime" />
+  </wsdl:message>
+  <wsdl:message name="Cm_GetDTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:Cm_GetDTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Common_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Common_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Common_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Common_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Cm_Test_LoadSoapIn">
+    <wsdl:part name="parameters" element="tns:Cm_Test_Load" />
+  </wsdl:message>
+  <wsdl:message name="Cm_Test_LoadSoapOut">
+    <wsdl:part name="parameters" element="tns:Cm_Test_LoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="Seq_Common_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Seq_Common_Get" />
+  </wsdl:message>
+  <wsdl:message name="Seq_Common_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Seq_Common_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_Create" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_Update" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Mst_AreaMarket_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_AreaMarket_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_Create" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_Update" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Distributor_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Distributor_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_Create" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_Update" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Outlet_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Outlet_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Province_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Province_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Province_Create" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Province_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Province_Update" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Province_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_Province_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Mst_Province_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_Province_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_District_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_District_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_District_Create" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_District_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_District_Update" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_District_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_District_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Mst_District_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_District_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_ActionType_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_ActionType_Get" />
+  </wsdl:message>
+  <wsdl:message name="Mst_ActionType_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_ActionType_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_ActionType_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_ActionType_Create" />
+  </wsdl:message>
+  <wsdl:message name="Mst_ActionType_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_ActionType_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mst_ActionType_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Mst_ActionType_Update" />
+  </wsdl:message>
+  <wsdl:message name="Mst_ActionType_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Mst_ActionType_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lic_Session_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Lic_Session_Get" />
+  </wsdl:message>
+  <wsdl:message name="Lic_Session_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Lic_Session_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lic_Session_DelSoapIn">
+    <wsdl:part name="parameters" element="tns:Lic_Session_Del" />
+  </wsdl:message>
+  <wsdl:message name="Lic_Session_DelSoapOut">
+    <wsdl:part name="parameters" element="tns:Lic_Session_DelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_GetForCurrentUserSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_GetForCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_GetForCurrentUserSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_GetForCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Login" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Logout" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Get" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_Get_01SoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Get_01" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_Get_01SoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_Get_01Response" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Create" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_UpdSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Upd" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_UpdSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_UpdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_User_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Sys_User_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_User_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Group_Get" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Group_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Group_Create" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Group_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Group_Update" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Group_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Group_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Group_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Group_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_UserInGroup_SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_UserInGroup_Save" />
+  </wsdl:message>
+  <wsdl:message name="Sys_UserInGroup_SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_UserInGroup_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Access_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Access_Get" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Access_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Access_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Access_SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Access_Save" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Access_SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Access_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Object_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Sys_Object_Get" />
+  </wsdl:message>
+  <wsdl:message name="Sys_Object_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Sys_Object_GetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSSoap">
+    <wsdl:operation name="Cm_Reinit">
+      <wsdl:input message="tns:Cm_ReinitSoapIn" />
+      <wsdl:output message="tns:Cm_ReinitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cm_Test">
+      <wsdl:input message="tns:Cm_TestSoapIn" />
+      <wsdl:output message="tns:Cm_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cm_GetId">
+      <wsdl:input message="tns:Cm_GetIdSoapIn" />
+      <wsdl:output message="tns:Cm_GetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cm_GetDTime">
+      <wsdl:input message="tns:Cm_GetDTimeSoapIn" />
+      <wsdl:output message="tns:Cm_GetDTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Common_Get">
+      <wsdl:input message="tns:Mst_Common_GetSoapIn" />
+      <wsdl:output message="tns:Mst_Common_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cm_Test_Load">
+      <wsdl:input message="tns:Cm_Test_LoadSoapIn" />
+      <wsdl:output message="tns:Cm_Test_LoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Seq_Common_Get">
+      <wsdl:input message="tns:Seq_Common_GetSoapIn" />
+      <wsdl:output message="tns:Seq_Common_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Get">
+      <wsdl:input message="tns:Mst_AreaMarket_GetSoapIn" />
+      <wsdl:output message="tns:Mst_AreaMarket_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Create">
+      <wsdl:input message="tns:Mst_AreaMarket_CreateSoapIn" />
+      <wsdl:output message="tns:Mst_AreaMarket_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Update">
+      <wsdl:input message="tns:Mst_AreaMarket_UpdateSoapIn" />
+      <wsdl:output message="tns:Mst_AreaMarket_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Delete">
+      <wsdl:input message="tns:Mst_AreaMarket_DeleteSoapIn" />
+      <wsdl:output message="tns:Mst_AreaMarket_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Get">
+      <wsdl:input message="tns:Mst_Distributor_GetSoapIn" />
+      <wsdl:output message="tns:Mst_Distributor_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Create">
+      <wsdl:input message="tns:Mst_Distributor_CreateSoapIn" />
+      <wsdl:output message="tns:Mst_Distributor_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Update">
+      <wsdl:input message="tns:Mst_Distributor_UpdateSoapIn" />
+      <wsdl:output message="tns:Mst_Distributor_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Delete">
+      <wsdl:input message="tns:Mst_Distributor_DeleteSoapIn" />
+      <wsdl:output message="tns:Mst_Distributor_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Get">
+      <wsdl:input message="tns:Mst_Outlet_GetSoapIn" />
+      <wsdl:output message="tns:Mst_Outlet_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Create">
+      <wsdl:input message="tns:Mst_Outlet_CreateSoapIn" />
+      <wsdl:output message="tns:Mst_Outlet_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Update">
+      <wsdl:input message="tns:Mst_Outlet_UpdateSoapIn" />
+      <wsdl:output message="tns:Mst_Outlet_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Delete">
+      <wsdl:input message="tns:Mst_Outlet_DeleteSoapIn" />
+      <wsdl:output message="tns:Mst_Outlet_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Get">
+      <wsdl:input message="tns:Mst_Province_GetSoapIn" />
+      <wsdl:output message="tns:Mst_Province_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Create">
+      <wsdl:input message="tns:Mst_Province_CreateSoapIn" />
+      <wsdl:output message="tns:Mst_Province_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Update">
+      <wsdl:input message="tns:Mst_Province_UpdateSoapIn" />
+      <wsdl:output message="tns:Mst_Province_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Delete">
+      <wsdl:input message="tns:Mst_Province_DeleteSoapIn" />
+      <wsdl:output message="tns:Mst_Province_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Get">
+      <wsdl:input message="tns:Mst_District_GetSoapIn" />
+      <wsdl:output message="tns:Mst_District_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Create">
+      <wsdl:input message="tns:Mst_District_CreateSoapIn" />
+      <wsdl:output message="tns:Mst_District_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Update">
+      <wsdl:input message="tns:Mst_District_UpdateSoapIn" />
+      <wsdl:output message="tns:Mst_District_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Delete">
+      <wsdl:input message="tns:Mst_District_DeleteSoapIn" />
+      <wsdl:output message="tns:Mst_District_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Get">
+      <wsdl:input message="tns:Mst_ActionType_GetSoapIn" />
+      <wsdl:output message="tns:Mst_ActionType_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Create">
+      <wsdl:input message="tns:Mst_ActionType_CreateSoapIn" />
+      <wsdl:output message="tns:Mst_ActionType_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Update">
+      <wsdl:input message="tns:Mst_ActionType_UpdateSoapIn" />
+      <wsdl:output message="tns:Mst_ActionType_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lic_Session_Get">
+      <wsdl:input message="tns:Lic_Session_GetSoapIn" />
+      <wsdl:output message="tns:Lic_Session_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lic_Session_Del">
+      <wsdl:input message="tns:Lic_Session_DelSoapIn" />
+      <wsdl:output message="tns:Lic_Session_DelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_ChangePassword">
+      <wsdl:input message="tns:Sys_User_ChangePasswordSoapIn" />
+      <wsdl:output message="tns:Sys_User_ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_GetForCurrentUser">
+      <wsdl:input message="tns:Sys_User_GetForCurrentUserSoapIn" />
+      <wsdl:output message="tns:Sys_User_GetForCurrentUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Login">
+      <wsdl:input message="tns:Sys_User_LoginSoapIn" />
+      <wsdl:output message="tns:Sys_User_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Logout">
+      <wsdl:input message="tns:Sys_User_LogoutSoapIn" />
+      <wsdl:output message="tns:Sys_User_LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Get">
+      <wsdl:input message="tns:Sys_User_GetSoapIn" />
+      <wsdl:output message="tns:Sys_User_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Get_01">
+      <wsdl:input message="tns:Sys_User_Get_01SoapIn" />
+      <wsdl:output message="tns:Sys_User_Get_01SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Create">
+      <wsdl:input message="tns:Sys_User_CreateSoapIn" />
+      <wsdl:output message="tns:Sys_User_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Upd">
+      <wsdl:input message="tns:Sys_User_UpdSoapIn" />
+      <wsdl:output message="tns:Sys_User_UpdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Delete">
+      <wsdl:input message="tns:Sys_User_DeleteSoapIn" />
+      <wsdl:output message="tns:Sys_User_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Get">
+      <wsdl:input message="tns:Sys_Group_GetSoapIn" />
+      <wsdl:output message="tns:Sys_Group_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Create">
+      <wsdl:input message="tns:Sys_Group_CreateSoapIn" />
+      <wsdl:output message="tns:Sys_Group_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Update">
+      <wsdl:input message="tns:Sys_Group_UpdateSoapIn" />
+      <wsdl:output message="tns:Sys_Group_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Delete">
+      <wsdl:input message="tns:Sys_Group_DeleteSoapIn" />
+      <wsdl:output message="tns:Sys_Group_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_UserInGroup_Save">
+      <wsdl:input message="tns:Sys_UserInGroup_SaveSoapIn" />
+      <wsdl:output message="tns:Sys_UserInGroup_SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Access_Get">
+      <wsdl:input message="tns:Sys_Access_GetSoapIn" />
+      <wsdl:output message="tns:Sys_Access_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Access_Save">
+      <wsdl:input message="tns:Sys_Access_SaveSoapIn" />
+      <wsdl:output message="tns:Sys_Access_SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Object_Get">
+      <wsdl:input message="tns:Sys_Object_GetSoapIn" />
+      <wsdl:output message="tns:Sys_Object_GetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSoap" type="tns:WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Cm_Reinit">
+      <soap:operation soapAction="http://tempuri.org/Cm_Reinit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_Test">
+      <soap:operation soapAction="http://tempuri.org/Cm_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_GetId">
+      <soap:operation soapAction="http://tempuri.org/Cm_GetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_GetDTime">
+      <soap:operation soapAction="http://tempuri.org/Cm_GetDTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Common_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_Common_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_Test_Load">
+      <soap:operation soapAction="http://tempuri.org/Cm_Test_Load" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Seq_Common_Get">
+      <soap:operation soapAction="http://tempuri.org/Seq_Common_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_AreaMarket_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Create">
+      <soap:operation soapAction="http://tempuri.org/Mst_AreaMarket_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Update">
+      <soap:operation soapAction="http://tempuri.org/Mst_AreaMarket_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Delete">
+      <soap:operation soapAction="http://tempuri.org/Mst_AreaMarket_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_Distributor_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Create">
+      <soap:operation soapAction="http://tempuri.org/Mst_Distributor_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Update">
+      <soap:operation soapAction="http://tempuri.org/Mst_Distributor_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Delete">
+      <soap:operation soapAction="http://tempuri.org/Mst_Distributor_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_Outlet_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Create">
+      <soap:operation soapAction="http://tempuri.org/Mst_Outlet_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Update">
+      <soap:operation soapAction="http://tempuri.org/Mst_Outlet_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Delete">
+      <soap:operation soapAction="http://tempuri.org/Mst_Outlet_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_Province_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Create">
+      <soap:operation soapAction="http://tempuri.org/Mst_Province_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Update">
+      <soap:operation soapAction="http://tempuri.org/Mst_Province_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Delete">
+      <soap:operation soapAction="http://tempuri.org/Mst_Province_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_District_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Create">
+      <soap:operation soapAction="http://tempuri.org/Mst_District_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Update">
+      <soap:operation soapAction="http://tempuri.org/Mst_District_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Delete">
+      <soap:operation soapAction="http://tempuri.org/Mst_District_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Get">
+      <soap:operation soapAction="http://tempuri.org/Mst_ActionType_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Create">
+      <soap:operation soapAction="http://tempuri.org/Mst_ActionType_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Update">
+      <soap:operation soapAction="http://tempuri.org/Mst_ActionType_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lic_Session_Get">
+      <soap:operation soapAction="http://tempuri.org/Lic_Session_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lic_Session_Del">
+      <soap:operation soapAction="http://tempuri.org/Lic_Session_Del" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_GetForCurrentUser">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_GetForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Login">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Logout">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Get">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Get_01">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Get_01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Create">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Upd">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Upd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Delete">
+      <soap:operation soapAction="http://tempuri.org/Sys_User_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Get">
+      <soap:operation soapAction="http://tempuri.org/Sys_Group_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Create">
+      <soap:operation soapAction="http://tempuri.org/Sys_Group_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Update">
+      <soap:operation soapAction="http://tempuri.org/Sys_Group_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Delete">
+      <soap:operation soapAction="http://tempuri.org/Sys_Group_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_UserInGroup_Save">
+      <soap:operation soapAction="http://tempuri.org/Sys_UserInGroup_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Access_Get">
+      <soap:operation soapAction="http://tempuri.org/Sys_Access_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Access_Save">
+      <soap:operation soapAction="http://tempuri.org/Sys_Access_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Object_Get">
+      <soap:operation soapAction="http://tempuri.org/Sys_Object_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSoap12" type="tns:WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Cm_Reinit">
+      <soap12:operation soapAction="http://tempuri.org/Cm_Reinit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_Test">
+      <soap12:operation soapAction="http://tempuri.org/Cm_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_GetId">
+      <soap12:operation soapAction="http://tempuri.org/Cm_GetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_GetDTime">
+      <soap12:operation soapAction="http://tempuri.org/Cm_GetDTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Common_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Common_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cm_Test_Load">
+      <soap12:operation soapAction="http://tempuri.org/Cm_Test_Load" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Seq_Common_Get">
+      <soap12:operation soapAction="http://tempuri.org/Seq_Common_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_AreaMarket_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Create">
+      <soap12:operation soapAction="http://tempuri.org/Mst_AreaMarket_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Update">
+      <soap12:operation soapAction="http://tempuri.org/Mst_AreaMarket_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_AreaMarket_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Mst_AreaMarket_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Distributor_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Create">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Distributor_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Update">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Distributor_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Distributor_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Distributor_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Outlet_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Create">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Outlet_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Update">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Outlet_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Outlet_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Outlet_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Province_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Create">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Province_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Update">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Province_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_Province_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Mst_Province_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_District_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Create">
+      <soap12:operation soapAction="http://tempuri.org/Mst_District_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Update">
+      <soap12:operation soapAction="http://tempuri.org/Mst_District_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_District_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Mst_District_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Get">
+      <soap12:operation soapAction="http://tempuri.org/Mst_ActionType_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Create">
+      <soap12:operation soapAction="http://tempuri.org/Mst_ActionType_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mst_ActionType_Update">
+      <soap12:operation soapAction="http://tempuri.org/Mst_ActionType_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lic_Session_Get">
+      <soap12:operation soapAction="http://tempuri.org/Lic_Session_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lic_Session_Del">
+      <soap12:operation soapAction="http://tempuri.org/Lic_Session_Del" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_GetForCurrentUser">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_GetForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Login">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Logout">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Get">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Get_01">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Get_01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Create">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Upd">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Upd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_User_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Sys_User_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Get">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Group_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Create">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Group_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Update">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Group_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Group_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Group_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_UserInGroup_Save">
+      <soap12:operation soapAction="http://tempuri.org/Sys_UserInGroup_Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Access_Get">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Access_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Access_Save">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Access_Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sys_Object_Get">
+      <soap12:operation soapAction="http://tempuri.org/Sys_Object_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS">
+    <wsdl:port name="WSSoap" binding="tns:WSSoap">
+      <soap:address location="http://localhost:29838/WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSoap12" binding="tns:WSSoap12">
+      <soap12:address location="http://localhost:29838/WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

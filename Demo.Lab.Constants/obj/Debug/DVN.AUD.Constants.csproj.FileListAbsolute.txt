@@ -1,0 +1,6 @@
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Constants\bin\Debug\DVN.AUD.Constants.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Constants\bin\Debug\DVN.AUD.Constants.pdb
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Constants\obj\Debug\DVN.AUD.Constants.csprojAssemblyReference.cache
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Constants\obj\Debug\DVN.AUD.Constants.csproj.CoreCompileInputs.cache
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Constants\obj\Debug\DVN.AUD.Constants.dll
+E:\Allprjs\idocNet\18.Dev\Dev\DungND\2014.Diana.Aud\Dev\DVN.AUD.V10\DVN.AUD.Constants\obj\Debug\DVN.AUD.Constants.pdb
