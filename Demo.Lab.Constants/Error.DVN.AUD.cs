@@ -902,8 +902,8 @@ namespace Demo.Lab.Errors
 		#region // Mst_StarShopGroup:
 		// Mst_StarShopGroup_CheckDB:
 		public const string Mst_StarShopGroup_CheckDB_StarShopGroupNotFound = "ErrDemoLab.Mst_StarShopGroup_CheckDB_StarShopGroupNotFound"; //// //Mst_StarShopGroup_CheckDB_StarShopGroupNotFound
-		public const string Mst_StarShopGroup_CheckDB_StarShopGroupExist = "Mst_StarShopGroup_CheckDB_StarShopGroupExist"; //// //Mst_StarShopGroup_CheckDB_StarShopGroupExist
-		public const string Mst_StarShopGroup_CheckDB_FlagActiveNotMatched = "Mst_StarShopGroup_CheckDB_FlagActiveNotMatched"; //// //Mst_StarShopGroup_CheckDB_FlagActiveNotMatched
+		public const string Mst_StarShopGroup_CheckDB_StarShopGroupExist = "ErrDemoLab.Mst_StarShopGroup_CheckDB_StarShopGroupExist"; //// //Mst_StarShopGroup_CheckDB_StarShopGroupExist
+		public const string Mst_StarShopGroup_CheckDB_FlagActiveNotMatched = "ErrDemoLab.Mst_StarShopGroup_CheckDB_FlagActiveNotMatched"; //// //Mst_StarShopGroup_CheckDB_FlagActiveNotMatched
 
 		// Mst_StarShopGroup_Get
 		public const string Mst_StarShopGroup_Get = "ErrDemoLab.Mst_StarShopGroup_Get"; //// //Mst_StarShopGroup_Get
@@ -923,9 +923,9 @@ namespace Demo.Lab.Errors
 		#endregion
 
 		#region // Mst_StarShopBrand:
-		public const string Mst_StarShopBrand_CheckDB_Mst_StarShopBrandNotFound = "ErrDemoLab.Mst_StarShopBrand_CheckDB_Mst_StarShopBrandNotFound"; //// //Mst_StarShopBrand_CheckDB_Mst_StarShopBrandNotFound
-		public const string Mst_StarShopBrand_CheckDB_Mst_StarShopBrandExist = "Mst_StarShopBrand_CheckDB_Mst_StarShopBrandExist"; //// //Mst_StarShopBrand_CheckDB_Mst_StarShopBrandExist
-		public const string Mst_StarShopBrand_CheckDB_FlagActiveNotMatched = "Mst_StarShopBrand_CheckDB_FlagActiveNotMatched"; //// //Mst_StarShopBrand_CheckDB_FlagActiveNotMatched
+		public const string Mst_StarShopBrand_CheckDB_StarShopBrandNotFound = "ErrDemoLab.Mst_StarShopBrand_CheckDB_Mst_StarShopBrandNotFound"; //// //Mst_StarShopBrand_CheckDB_Mst_StarShopBrandNotFound
+		public const string Mst_StarShopBrand_CheckDB_StarShopBrandExist = "ErrDemoLab.Mst_StarShopBrand_CheckDB_Mst_StarShopBrandExist"; //// //Mst_StarShopBrand_CheckDB_Mst_StarShopBrandExist
+		public const string Mst_StarShopBrand_CheckDB_FlagActiveNotMatched = "ErrDemoLab.Mst_StarShopBrand_CheckDB_FlagActiveNotMatched"; //// //Mst_StarShopBrand_CheckDB_FlagActiveNotMatched
 
 		// Mst_StarShopBrand_Get
 		public const string Mst_StarShopBrand_Get = "ErrDemoLab.Mst_StarShopBrand_Get"; //// //Mst_StarShopBrand_Get
@@ -945,9 +945,9 @@ namespace Demo.Lab.Errors
 		#endregion
 
 		#region // Mst_StarShopType:
-		public const string Mst_StarShopType_CheckDB_Mst_StarShopTypeNotFound = "ErrDemoLab.Mst_StarShopType_CheckDB_Mst_StarShopTypeNotFound"; //// //Mst_StarShopType_CheckDB_Mst_StarShopTypeNotFound
-		public const string Mst_StarShopType_CheckDB_Mst_StarShopTypeExist = "Mst_StarShopType_CheckDB_Mst_StarShopTypeExist"; //// //Mst_StarShopType_CheckDB_Mst_StarShopTypeExist
-		public const string Mst_StarShopType_CheckDB_FlagActiveNotMatched = "Mst_StarShopType_CheckDB_FlagActiveNotMatched"; //// //Mst_StarShopType_CheckDB_FlagActiveNotMatched
+		public const string Mst_StarShopType_CheckDB_StarShopTypeNotFound = "ErrDemoLab.Mst_StarShopType_CheckDB_Mst_StarShopTypeNotFound"; //// //Mst_StarShopType_CheckDB_Mst_StarShopTypeNotFound
+		public const string Mst_StarShopType_CheckDB_StarShopTypeExist = "ErrDemoLab.Mst_StarShopType_CheckDB_Mst_StarShopTypeExist"; //// //Mst_StarShopType_CheckDB_Mst_StarShopTypeExist
+		public const string Mst_StarShopType_CheckDB_FlagActiveNotMatched = "ErrDemoLab.Mst_StarShopType_CheckDB_FlagActiveNotMatched"; //// //Mst_StarShopType_CheckDB_FlagActiveNotMatched
 
 		// Mst_StarShopType_Get
 		public const string Mst_StarShopType_Get = "ErrDemoLab.Mst_StarShopType_Get"; //// //Mst_StarShopType_Get

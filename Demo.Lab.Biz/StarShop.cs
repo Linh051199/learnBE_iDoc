@@ -504,7 +504,7 @@ namespace Demo.Lab.Biz
 				strFt_Cols_Upd = (strFt_Cols_Upd == null ? "" : strFt_Cols_Upd);
 				////
 				string strSSGrpCode = TUtils.CUtils.StdParam(objSSGrpCode);
-				string strSSGrpName = TUtils.CUtils.StdParam(objSSGrpName);
+				string strSSGrpName = string.Format("{0}", objSSGrpName).Trim();
 				string strFlagActive = TUtils.CUtils.StdFlag(objFlagActive);
 				////
 				bool bUpd_SSGrpName = strFt_Cols_Upd.Contains("Mst_StarShopGroup.SSGrpName".ToUpper());
@@ -536,7 +536,7 @@ namespace Demo.Lab.Biz
 				}
 				#endregion
 
-				#region // Save Mst_StarShopGroup
+				#region // Save Mst_StarShopGroup:
 				{
 					// Init:
 					ArrayList alColumnEffective = new ArrayList();
@@ -735,7 +735,7 @@ namespace Demo.Lab.Biz
 						"Check.SSBrandCode", objSSBrandCode
 						});
 					throw CmUtils.CMyException.Raise(
-						TError.ErrDemoLab.Mst_StarShopBrand_CheckDB_Mst_StarShopBrandNotFound
+						TError.ErrDemoLab.Mst_StarShopBrand_CheckDB_StarShopBrandNotFound
 						, null
 						, alParamsCoupleError.ToArray()
 						);
@@ -746,7 +746,7 @@ namespace Demo.Lab.Biz
 						"Check.SSBrandCode", objSSBrandCode
 						});
 					throw CmUtils.CMyException.Raise(
-						TError.ErrDemoLab.Mst_StarShopBrand_CheckDB_Mst_StarShopBrandExist
+						TError.ErrDemoLab.Mst_StarShopBrand_CheckDB_StarShopBrandExist
 						, null
 						, alParamsCoupleError.ToArray()
 						);
@@ -1183,7 +1183,7 @@ namespace Demo.Lab.Biz
 				strFt_Cols_Upd = (strFt_Cols_Upd == null ? "" : strFt_Cols_Upd);
 				////
 				string strSSBrandCode = TUtils.CUtils.StdParam(objSSBrandCode);
-				string strSSBrandName = TUtils.CUtils.StdParam(objSSBrandName);
+				string strSSBrandName = string.Format("{0}", objSSBrandName).Trim();
 				string strFlagActive = TUtils.CUtils.StdFlag(objFlagActive);
 				////
 				bool bUpd_SSBrandName = strFt_Cols_Upd.Contains("Mst_StarShopBrand.SSBrandName".ToUpper());
@@ -1415,9 +1415,10 @@ namespace Demo.Lab.Biz
 				{
 					alParamsCoupleError.AddRange(new object[]{
 						"Check.SSGrpCode", objSSGrpCode
+						, "Check.SSBrandCode", objSSBrandCode
 						});
 					throw CmUtils.CMyException.Raise(
-						TError.ErrDemoLab.Mst_StarShopType_CheckDB_Mst_StarShopTypeNotFound
+						TError.ErrDemoLab.Mst_StarShopType_CheckDB_StarShopTypeNotFound
 						, null
 						, alParamsCoupleError.ToArray()
 						);
@@ -1426,9 +1427,10 @@ namespace Demo.Lab.Biz
 				{
 					alParamsCoupleError.AddRange(new object[]{
 						"Check.SSGrpCode", objSSGrpCode
+						, "Check.SSBrandCode", objSSBrandCode
 						});
 					throw CmUtils.CMyException.Raise(
-						TError.ErrDemoLab.Mst_StarShopType_CheckDB_Mst_StarShopTypeExist
+						TError.ErrDemoLab.Mst_StarShopType_CheckDB_StarShopTypeExist
 						, null
 						, alParamsCoupleError.ToArray()
 						);
@@ -1440,6 +1442,7 @@ namespace Demo.Lab.Biz
 			{
 				alParamsCoupleError.AddRange(new object[]{
 					"Check.SSGrpCode", objSSGrpCode
+					, "Check.SSBrandCode", objSSBrandCode
 					, "Check.strFlagActiveListToCheck", strFlagActiveListToCheck
 					, "DB.FlagActive", dtDB_Mst_StarShopType.Rows[0]["FlagActive"]
 					});
@@ -1530,8 +1533,9 @@ namespace Demo.Lab.Biz
 						from Mst_StarShopType msst --//[mylock]
 						where (1=1)
 							zzB_Where_strFilter_zzE
-						order by msst.SSGrpCode asc
-						order by msst.SSBrandCode asc
+						order by 
+							msst.SSGrpCode asc
+							, msst.SSBrandCode asc
 						;
 
 						---- Summary:
@@ -1572,9 +1576,10 @@ namespace Demo.Lab.Biz
 							from #tbl_Mst_StarShopType_Filter t --//[mylock]
 								inner join Mst_StarShopType msst --//[mylock]
 									on t.SSGrpCode = msst.SSGrpCode
-							    left join Mst_StarShopTypeType mssg --//[mylock]
+										and t.SSBrandCode = msst.SSBrandCode
+							    left join Mst_StarShopGroup mssg --//[mylock]
 							        on msst.SSGrpCode = mssg.SSGrpCode
-							    left join Mst_StarShopTypeUnitType mssb --//[mylock]
+							    left join Mst_StarShopBrand mssb --//[mylock]
 							        on msst.SSBrandCode = mssb.SSBrandCode
 							order by t.MyIdxSeq asc
 							;
@@ -1723,7 +1728,7 @@ namespace Demo.Lab.Biz
 				string strSSGrpCode = TUtils.CUtils.StdParam(objSSGrpCode);
 				string strSSBrandCode = TUtils.CUtils.StdParam(objSSBrandCode);
 				string strSSTypeName = string.Format("{0}", objSSTypeName).Trim();
-				string strSSRate = string.Format("{0}", objSSRate).Trim();
+				string strSSRate = TUtils.CUtils.StdParam(objSSRate);
 
 				// drAbilityOfUser:
 				//DataRow drAbilityOfUser = Sys_User_GetAbilityViewOfUser(_cf.sinf.strUserCode);
@@ -1745,6 +1750,7 @@ namespace Demo.Lab.Biz
 							, alParamsCoupleError.ToArray()
 							);
 					}
+					// //
 					if (strSSBrandCode == null || strSSBrandCode.Length < 1)
 					{
 						alParamsCoupleError.AddRange(new object[]{
@@ -1767,7 +1773,7 @@ namespace Demo.Lab.Biz
 					////
 					Mst_StarShopGroup_CheckDB(
 						ref alParamsCoupleError // alParamsCoupleError
-						, strSSGrpCode // strSSGrpCode
+						, strSSGrpCode // objSSGrpCode
 						, TConst.Flag.Yes // strFlagExistToCheck
 						, TConst.Flag.Active // strFlagActiveListToCheck
 						, out dtDB_Mst_StarShopGroup // dtDB_Mst_StarShopGroup
@@ -1775,7 +1781,7 @@ namespace Demo.Lab.Biz
 					// //
 					Mst_StarShopBrand_CheckDB(
 						ref alParamsCoupleError // alParamsCoupleError
-						, strSSBrandCode // strSSBrandCode
+						, strSSBrandCode // objSSBrandCode
 						, TConst.Flag.Yes // strFlagExistToCheck
 						, TConst.Flag.Active // strFlagActiveListToCheck
 						, out dtDB_Mst_StarShopBrand // dtDB_Mst_StarShopBrand
@@ -1793,6 +1799,7 @@ namespace Demo.Lab.Biz
 							, alParamsCoupleError.ToArray()
 							);
 					}
+					// //
 					if (strSSRate.Length < 1)
 					{
 						alParamsCoupleError.AddRange(new object[]{
@@ -1927,7 +1934,7 @@ namespace Demo.Lab.Biz
 				string strSSGrpCode = TUtils.CUtils.StdParam(objSSGrpCode);
 				string strSSBrandCode = TUtils.CUtils.StdParam(objSSBrandCode);
 				string strSSTypeName = string.Format("{0}", objSSTypeName).Trim();
-				string strSSRate = string.Format("{0}", objSSRate).Trim();
+				string strSSRate = TUtils.CUtils.StdParam(objSSRate);
 				string strFlagActive = TUtils.CUtils.StdFlag(objFlagActive);
 				////
 				bool bUpd_SSTypeName = strFt_Cols_Upd.Contains("Mst_StarShopType.SSTypeName".ToUpper());
@@ -1958,6 +1965,7 @@ namespace Demo.Lab.Biz
 							, alParamsCoupleError.ToArray()
 							);
 					}
+					// //
 					if (bUpd_SSRate && string.IsNullOrEmpty(strSSRate))
 					{
 						alParamsCoupleError.AddRange(new object[]{
