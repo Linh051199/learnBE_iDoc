@@ -1485,6 +1485,1568 @@ namespace Demo.Lab.WS
 		}
 		#endregion
 
+		#region // Mst_POSMType:
+		[WebMethod]
+		public object[] Mst_POSMType_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_POSMType
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMType_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMType_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_POSMType
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSMType_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMType
+			, object objPOSMTypeName
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMType_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMType_Create(
+			strTid
+			, drSession
+			//// 
+			, objPOSMType
+			, objPOSMTypeName
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSMType_Update(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMType
+			, object objPOSMTypeName
+			, object objFlagActive
+			////
+			, object objFt_Cols_Upd
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMType_Update";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMType_Update(
+			strTid
+			, drSession
+			//// 
+			, objPOSMType
+			, objPOSMTypeName
+			, objFlagActive
+			////
+			, objFt_Cols_Upd
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSMType_Delete(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMType
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMType_Delete";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMType_Delete(
+			strTid
+			, drSession
+			//// 
+			, objPOSMType
+			));
+		}
+		#endregion
+
+		#region // Mst_POSMUnitType:
+		[WebMethod]
+		public object[] Mst_POSMUnitType_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_POSMUnitType
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMUnitType_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMUnitType_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_POSMUnitType
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSMUnitType_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMUnitType
+			, object objPOSMUnitTypeName
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMUnitType_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMUnitType_Create(
+			strTid
+			, drSession
+			//// 
+			, objPOSMUnitType
+			, objPOSMUnitTypeName
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSMUnitType_Update(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMUnitType
+			, object objPOSMUnitTypeName
+			, object objFlagActive
+			////
+			, object objFt_Cols_Upd
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMUnitType_Update";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMUnitType_Update(
+			strTid
+			, drSession
+			//// 
+			, objPOSMUnitType
+			, objPOSMUnitTypeName
+			, objFlagActive
+			////
+			, objFt_Cols_Upd
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSMUnitType_Delete(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMUnitType
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSMUnitType_Delete";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSMUnitType_Delete(
+			strTid
+			, drSession
+			//// 
+			, objPOSMUnitType
+			));
+		}
+		#endregion
+
+		#region // Mst_POSM:
+		[WebMethod]
+		public object[] Mst_POSM_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_POSM
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSM_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSM_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_POSM
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSM_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMCode
+			, object objPOSMType
+			, object objPOSMUnitType
+			, object objPOSMName
+			, object objPOSMDesc
+			, object objPOSMImageFilePath
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSM_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSM_Create(
+			strTid
+			, drSession
+			//// 
+			, objPOSMCode
+			, objPOSMType
+			, objPOSMUnitType
+			, objPOSMName
+			, objPOSMDesc
+			, objPOSMImageFilePath
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSM_Update(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMCode
+			, object objPOSMType
+			, object objPOSMUnitType
+			, object objPOSMName
+			, object objPOSMDesc
+			, object objPOSMImageFilePath
+			, object objFlagActive
+			////
+			, object objFt_Cols_Upd
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSM_Update";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSM_Update(
+			strTid
+			, drSession
+			//// 
+			, objPOSMCode
+			, objPOSMType
+			, objPOSMUnitType
+			, objPOSMName
+			, objPOSMDesc
+			, objPOSMImageFilePath
+			, objFlagActive
+			////
+			, objFt_Cols_Upd
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_POSM_Delete(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objPOSMCode
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_POSM_Delete";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_POSM_Delete(
+			strTid
+			, drSession
+			//// 
+			, objPOSMCode
+			));
+		}
+		#endregion
+
+		#region // Mst_StarShopGroup:
+		[WebMethod]
+		public object[] Mst_StarShopGroup_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_StarShopGroup
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopGroup_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopGroup_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_StarShopGroup
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopGroup_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			, object objSSGrpName
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopGroup_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopGroup_Create(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			, objSSGrpName
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopGroup_Update(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			, object objSSGrpName
+			, object objFlagActive
+			////
+			, object objFt_Cols_Upd
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopGroup_Update";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopGroup_Update(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			, objSSGrpName
+			, objFlagActive
+			////
+			, objFt_Cols_Upd
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopGroup_Delete(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopGroup_Delete";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopGroup_Delete(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			));
+		}
+		#endregion
+
+		#region // Mst_StarShopBrand:
+		[WebMethod]
+		public object[] Mst_StarShopBrand_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_StarShopBrand
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopBrand_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopBrand_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_StarShopBrand
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopBrand_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSBrandCode
+			, object objSSBrandName
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopBrand_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopBrand_Create(
+			strTid
+			, drSession
+			//// 
+			, objSSBrandCode
+			, objSSBrandName
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopBrand_Update(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSBrandCode
+			, object objSSBrandName
+			, object objFlagActive
+			////
+			, object objFt_Cols_Upd
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopBrand_Update";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopBrand_Update(
+			strTid
+			, drSession
+			//// 
+			, objSSBrandCode
+			, objSSBrandName
+			, objFlagActive
+			////
+			, objFt_Cols_Upd
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopBrand_Delete(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSBrandCode
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopBrand_Delete";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopBrand_Delete(
+			strTid
+			, drSession
+			//// 
+			, objSSBrandCode
+			));
+		}
+		#endregion
+
+		#region // Mst_StarShopType:
+		[WebMethod]
+		public object[] Mst_StarShopType_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_StarShopType
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopType_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopType_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_StarShopType
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopType_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			, object objSSBrandCode
+			, object objSSTypeName
+			, object objSSRate
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopType_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopType_Create(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			, objSSBrandCode
+			, objSSTypeName
+			, objSSRate
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopType_Update(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			, object objSSBrandCode
+			, object objSSTypeName
+			, object objSSRate
+			, object objFlagActive
+			////
+			, object objFt_Cols_Upd
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopType_Update";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopType_Update(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			, objSSBrandCode
+			, objSSTypeName
+			, objSSRate
+			, objFlagActive
+			////
+			, objFt_Cols_Upd
+			));
+		}
+
+		[WebMethod]
+		public object[] Mst_StarShopType_Delete(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			, object objSSBrandCode
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopType_Delete";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopType_Delete(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			, objSSBrandCode
+			));
+		}
+		#endregion
+
 		#region // Mst_District:
 		[WebMethod]
 		public object[] Mst_District_Get(
