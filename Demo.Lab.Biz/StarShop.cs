@@ -195,11 +195,11 @@ namespace Demo.Lab.Biz
 					"
 					);
 				////
-				string zzB_Select_strFilter_zzE = "";
+				string zzB_Select_Mst_StarShopGroup_zzE = "";
 				if (bGet_Mst_StarShopGroup)
 				{
 					#region // bGet_Mst_StarShopGroup:
-					zzB_Select_strFilter_zzE = CmUtils.StringUtils.Replace(@"
+					zzB_Select_Mst_StarShopGroup_zzE = CmUtils.StringUtils.Replace(@"
 							---- Mst_StarShopGroup:
 							select
 								t.MyIdxSeq
@@ -245,7 +245,7 @@ namespace Demo.Lab.Biz
 				strSqlGetData = CmUtils.StringUtils.Replace(
 					strSqlGetData
 					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
-					, "zzB_Select_strFilter_zzE", zzB_Select_strFilter_zzE
+					, "zzB_Select_Mst_StarShopGroup_zzE", zzB_Select_Mst_StarShopGroup_zzE
 					);
 				#endregion
 
@@ -874,11 +874,11 @@ namespace Demo.Lab.Biz
 					"
 					);
 				////
-				string zzB_Select_strFilter_zzE = "";
+				string zzB_Select_Mst_StarShopBrand_zzE = "";
 				if (bGet_Mst_StarShopBrand)
 				{
 					#region // bGet_Mst_StarShopBrand:
-					zzB_Select_strFilter_zzE = CmUtils.StringUtils.Replace(@"
+					zzB_Select_Mst_StarShopBrand_zzE = CmUtils.StringUtils.Replace(@"
 							---- Mst_StarShopBrand:
 							select
 								t.MyIdxSeq
@@ -924,7 +924,7 @@ namespace Demo.Lab.Biz
 				strSqlGetData = CmUtils.StringUtils.Replace(
 					strSqlGetData
 					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
-					, "zzB_Select_strFilter_zzE", zzB_Select_strFilter_zzE
+					, "zzB_Select_Mst_StarShopBrand_zzE", zzB_Select_Mst_StarShopBrand_zzE
 					);
 				#endregion
 

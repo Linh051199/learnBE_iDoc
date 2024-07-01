@@ -820,9 +820,9 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_POSMUnitType_Get:
-			if (!bTest)
+			if (bTest)
 			{
-				string strFt_WhereClause = "Mst_POSMType.POSMType = 'PMH'";
+				string strFt_WhereClause = "Mst_POSMUnitType.POSMUnitType = 'SHEET'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_POSMUnitType_Get(
 					strGwUserCode // strGwUserCode	
 					, strGwPassword // strGwPassword	
@@ -849,6 +849,131 @@ namespace ZTest01
 				System.Threading.Thread.Sleep(10);
 			}
 			#endregion
+
+			#region // Mst_POSM_Get:
+			if (bTest)
+			{
+				string strFt_WhereClause = "Mst_POSM.POSMCode = 'GB'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_POSM_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // strFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_POSM	
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
+			#region // Mst_StarShopGroup_Get:
+			if (bTest)
+			{
+				string strFt_WhereClause = "Mst_StarShopGroup.SSGrpCode = '1'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopGroup_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // strFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_StarShopGroup	
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
+			#region // Mst_StarShopBrand_Get:
+			if (bTest)
+			{
+				string strFt_WhereClause = "Mst_StarShopBrand.SSBrandCode = '1'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopBrand_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // strFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_StarShopBrand	
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
+			#region // Mst_StarShopType_Get:
+			if (bTest)
+			{
+				string strFt_WhereClause = "Mst_StarShopType.SSGrpCode = '1'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopType_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // strFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_StarShopType	
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
 
 
 			////
