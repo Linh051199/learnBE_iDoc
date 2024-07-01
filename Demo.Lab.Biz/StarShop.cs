@@ -195,7 +195,7 @@ namespace Demo.Lab.Biz
 					"
 					);
 				////
-				string zzB_Select_Mst_StarShopGroup_zzE = "";
+				string zzB_Select_Mst_StarShopGroup_zzE = "-- Nothing.";
 				if (bGet_Mst_StarShopGroup)
 				{
 					#region // bGet_Mst_StarShopGroup:
@@ -874,7 +874,7 @@ namespace Demo.Lab.Biz
 					"
 					);
 				////
-				string zzB_Select_Mst_StarShopBrand_zzE = "";
+				string zzB_Select_Mst_StarShopBrand_zzE = "-- Nothing.";
 				if (bGet_Mst_StarShopBrand)
 				{
 					#region // bGet_Mst_StarShopBrand:

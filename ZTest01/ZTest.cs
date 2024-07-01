@@ -882,7 +882,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_StarShopGroup_Get:
-			if (bTest)
+			if (!bTest)
 			{
 				string strFt_WhereClause = "Mst_StarShopGroup.SSGrpCode = '1'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopGroup_Get(
@@ -913,7 +913,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_StarShopBrand_Get:
-			if (bTest)
+			if (!bTest)
 			{
 				string strFt_WhereClause = "Mst_StarShopBrand.SSBrandCode = '1'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopBrand_Get(
@@ -944,7 +944,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_StarShopType_Get:
-			if (bTest)
+			if (!bTest)
 			{
 				string strFt_WhereClause = "Mst_StarShopType.SSGrpCode = '1'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopType_Get(
@@ -954,7 +954,8 @@ namespace ZTest01
 					, strSessionId // strSessionId	
 								   ////	
 					, strFt_RecordStart  // strFt_RecordStart	
-					, strFt_RecordCount  // strFt_RecordCount	
+					, strFt_RecordCount  // st
+										 // rFt_RecordCount	
 					, strFt_WhereClause  // strFt_WhereClause	
 										 ////	
 					, "*" // strRt_Cols_Mst_StarShopType	
