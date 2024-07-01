@@ -882,7 +882,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_StarShopGroup_Get:
-			if (!bTest)
+			if (bTest)
 			{
 				string strFt_WhereClause = "Mst_StarShopGroup.SSGrpCode = '1'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopGroup_Get(
@@ -913,7 +913,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_StarShopBrand_Get:
-			if (!bTest)
+			if (bTest)
 			{
 				string strFt_WhereClause = "Mst_StarShopBrand.SSBrandCode = '1'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopBrand_Get(
@@ -944,7 +944,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_StarShopType_Get:
-			if (!bTest)
+			if (bTest)
 			{
 				string strFt_WhereClause = "Mst_StarShopType.SSGrpCode = '1'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopType_Get(
@@ -959,6 +959,38 @@ namespace ZTest01
 					, strFt_WhereClause  // strFt_WhereClause	
 										 ////	
 					, "*" // strRt_Cols_Mst_StarShopType	
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
+			#region // Mst_CampainCriteria_Get_Get:
+			if (bTest)
+			{
+				string strFt_WhereClause = "Mst_CampainCriteria_Get.CampaignCrCode = '20140623.153829' and Mst_CampainCriteria_Get.CampainCriteriaType = 'POSM' and Mst_CampainCriteria_Get.CreateDTime = '2024-05-15 14:26:49'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteria_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // st
+										 // rFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_CampainCriteria	
 					));
 
 				dtTable0 = mdsResult.Tables[0];

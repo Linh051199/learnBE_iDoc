@@ -283,11 +283,11 @@ namespace Demo.Lab.Biz
 					"
 					);
 				////
-				string zzB_Select_strFilter_zzE = "";
+				string zzB_Select_Mst_CampainCriteria_zzE = "-- Nothing.";
 				if (bGet_Mst_CampainCriteria)
 				{
 					#region // bGet_Mst_CampainCriteria:
-					zzB_Select_strFilter_zzE = CmUtils.StringUtils.Replace(@"
+					zzB_Select_Mst_CampainCriteria_zzE = CmUtils.StringUtils.Replace(@"
 							---- Mst_CampainCriteria:
 							select
 								t.MyIdxSeq
@@ -333,7 +333,7 @@ namespace Demo.Lab.Biz
 				strSqlGetData = CmUtils.StringUtils.Replace(
 					strSqlGetData
 					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
-					, "zzB_Select_strFilter_zzE", zzB_Select_strFilter_zzE
+					, "zzB_Select_Mst_CampainCriteria_zzE", zzB_Select_Mst_CampainCriteria_zzE
 					);
 				#endregion
 
