@@ -789,7 +789,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_POSMType_Get:
-			if (!bTest)
+			if (bTest)
 			{
 				string strFt_WhereClause = "Mst_POSMType.POSMType = 'PMH'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_POSMType_Get(
@@ -818,6 +818,38 @@ namespace ZTest01
 				System.Threading.Thread.Sleep(10);
 			}
 			#endregion
+
+			#region // Mst_POSMUnitType_Get:
+			if (!bTest)
+			{
+				string strFt_WhereClause = "Mst_POSMType.POSMType = 'PMH'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_POSMUnitType_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // strFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_POSMUnitType	
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
 
 			////
 			Thread.Sleep(10);
