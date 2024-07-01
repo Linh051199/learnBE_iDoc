@@ -128,6 +128,70 @@ namespace ZTest01.WSDVNAUD {
         
         private System.Threading.SendOrPostCallback Sys_Object_GetOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Mst_POSMType_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMType_CreateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMType_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMType_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMUnitType_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMUnitType_CreateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMUnitType_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSMUnitType_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSM_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSM_CreateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSM_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_POSM_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopGroup_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopGroup_CreateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopGroup_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopGroup_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopBrand_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopBrand_CreateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopBrand_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopBrand_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopType_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopType_CreateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopType_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_StarShopType_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_CampainCriteria_GetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_CampainCriteria_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_CampainCriteria_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Mst_CampainCriteria_SaveOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Aud_Campaign_SaveOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Aud_Campaign_ApproveOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Aud_Campaign_CancelOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Aud_CampaignDBReceive_SaveOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -312,6 +376,102 @@ namespace ZTest01.WSDVNAUD {
         
         /// <remarks/>
         public event Sys_Object_GetCompletedEventHandler Sys_Object_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMType_GetCompletedEventHandler Mst_POSMType_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMType_CreateCompletedEventHandler Mst_POSMType_CreateCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMType_UpdateCompletedEventHandler Mst_POSMType_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMType_DeleteCompletedEventHandler Mst_POSMType_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMUnitType_GetCompletedEventHandler Mst_POSMUnitType_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMUnitType_CreateCompletedEventHandler Mst_POSMUnitType_CreateCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMUnitType_UpdateCompletedEventHandler Mst_POSMUnitType_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSMUnitType_DeleteCompletedEventHandler Mst_POSMUnitType_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSM_GetCompletedEventHandler Mst_POSM_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSM_CreateCompletedEventHandler Mst_POSM_CreateCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSM_UpdateCompletedEventHandler Mst_POSM_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_POSM_DeleteCompletedEventHandler Mst_POSM_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopGroup_GetCompletedEventHandler Mst_StarShopGroup_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopGroup_CreateCompletedEventHandler Mst_StarShopGroup_CreateCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopGroup_UpdateCompletedEventHandler Mst_StarShopGroup_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopGroup_DeleteCompletedEventHandler Mst_StarShopGroup_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopBrand_GetCompletedEventHandler Mst_StarShopBrand_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopBrand_CreateCompletedEventHandler Mst_StarShopBrand_CreateCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopBrand_UpdateCompletedEventHandler Mst_StarShopBrand_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopBrand_DeleteCompletedEventHandler Mst_StarShopBrand_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopType_GetCompletedEventHandler Mst_StarShopType_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopType_CreateCompletedEventHandler Mst_StarShopType_CreateCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopType_UpdateCompletedEventHandler Mst_StarShopType_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_StarShopType_DeleteCompletedEventHandler Mst_StarShopType_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_CampainCriteria_GetCompletedEventHandler Mst_CampainCriteria_GetCompleted;
+        
+        /// <remarks/>
+        public event Mst_CampainCriteria_UpdateCompletedEventHandler Mst_CampainCriteria_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Mst_CampainCriteria_DeleteCompletedEventHandler Mst_CampainCriteria_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Mst_CampainCriteria_SaveCompletedEventHandler Mst_CampainCriteria_SaveCompleted;
+        
+        /// <remarks/>
+        public event Aud_Campaign_SaveCompletedEventHandler Aud_Campaign_SaveCompleted;
+        
+        /// <remarks/>
+        public event Aud_Campaign_ApproveCompletedEventHandler Aud_Campaign_ApproveCompleted;
+        
+        /// <remarks/>
+        public event Aud_Campaign_CancelCompletedEventHandler Aud_Campaign_CancelCompleted;
+        
+        /// <remarks/>
+        public event Aud_CampaignDBReceive_SaveCompletedEventHandler Aud_CampaignDBReceive_SaveCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Cm_Reinit", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -2701,6 +2861,1412 @@ namespace ZTest01.WSDVNAUD {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMType_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMType_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSMType) {
+            object[] results = this.Invoke("Mst_POSMType_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_POSMType});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSMType) {
+            this.Mst_POSMType_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_POSMType, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSMType, object userState) {
+            if ((this.Mst_POSMType_GetOperationCompleted == null)) {
+                this.Mst_POSMType_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMType_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMType_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_POSMType}, this.Mst_POSMType_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMType_GetOperationCompleted(object arg) {
+            if ((this.Mst_POSMType_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMType_GetCompleted(this, new Mst_POSMType_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMType_Create", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMType_Create(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object objPOSMTypeName) {
+            object[] results = this.Invoke("Mst_POSMType_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMType,
+                        objPOSMTypeName});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object objPOSMTypeName) {
+            this.Mst_POSMType_CreateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMType, objPOSMTypeName, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object objPOSMTypeName, object userState) {
+            if ((this.Mst_POSMType_CreateOperationCompleted == null)) {
+                this.Mst_POSMType_CreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMType_CreateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMType_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMType,
+                        objPOSMTypeName}, this.Mst_POSMType_CreateOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMType_CreateOperationCompleted(object arg) {
+            if ((this.Mst_POSMType_CreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMType_CreateCompleted(this, new Mst_POSMType_CreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMType_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMType_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object objPOSMTypeName, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_POSMType_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMType,
+                        objPOSMTypeName,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object objPOSMTypeName, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_POSMType_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMType, objPOSMTypeName, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object objPOSMTypeName, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_POSMType_UpdateOperationCompleted == null)) {
+                this.Mst_POSMType_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMType_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMType_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMType,
+                        objPOSMTypeName,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_POSMType_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMType_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_POSMType_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMType_UpdateCompleted(this, new Mst_POSMType_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMType_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMType_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType) {
+            object[] results = this.Invoke("Mst_POSMType_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMType});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType) {
+            this.Mst_POSMType_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMType, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMType_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMType, object userState) {
+            if ((this.Mst_POSMType_DeleteOperationCompleted == null)) {
+                this.Mst_POSMType_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMType_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMType_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMType}, this.Mst_POSMType_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMType_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_POSMType_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMType_DeleteCompleted(this, new Mst_POSMType_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMUnitType_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMUnitType_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSMUnitType) {
+            object[] results = this.Invoke("Mst_POSMUnitType_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_POSMUnitType});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSMUnitType) {
+            this.Mst_POSMUnitType_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_POSMUnitType, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSMUnitType, object userState) {
+            if ((this.Mst_POSMUnitType_GetOperationCompleted == null)) {
+                this.Mst_POSMUnitType_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMUnitType_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMUnitType_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_POSMUnitType}, this.Mst_POSMUnitType_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMUnitType_GetOperationCompleted(object arg) {
+            if ((this.Mst_POSMUnitType_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMUnitType_GetCompleted(this, new Mst_POSMUnitType_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMUnitType_Create", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMUnitType_Create(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object objPOSMUnitTypeName) {
+            object[] results = this.Invoke("Mst_POSMUnitType_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMUnitType,
+                        objPOSMUnitTypeName});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object objPOSMUnitTypeName) {
+            this.Mst_POSMUnitType_CreateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMUnitType, objPOSMUnitTypeName, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object objPOSMUnitTypeName, object userState) {
+            if ((this.Mst_POSMUnitType_CreateOperationCompleted == null)) {
+                this.Mst_POSMUnitType_CreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMUnitType_CreateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMUnitType_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMUnitType,
+                        objPOSMUnitTypeName}, this.Mst_POSMUnitType_CreateOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMUnitType_CreateOperationCompleted(object arg) {
+            if ((this.Mst_POSMUnitType_CreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMUnitType_CreateCompleted(this, new Mst_POSMUnitType_CreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMUnitType_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMUnitType_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object objPOSMUnitTypeName, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_POSMUnitType_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMUnitType,
+                        objPOSMUnitTypeName,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object objPOSMUnitTypeName, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_POSMUnitType_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMUnitType, objPOSMUnitTypeName, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object objPOSMUnitTypeName, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_POSMUnitType_UpdateOperationCompleted == null)) {
+                this.Mst_POSMUnitType_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMUnitType_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMUnitType_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMUnitType,
+                        objPOSMUnitTypeName,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_POSMUnitType_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMUnitType_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_POSMUnitType_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMUnitType_UpdateCompleted(this, new Mst_POSMUnitType_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSMUnitType_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSMUnitType_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType) {
+            object[] results = this.Invoke("Mst_POSMUnitType_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMUnitType});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType) {
+            this.Mst_POSMUnitType_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMUnitType, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSMUnitType_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMUnitType, object userState) {
+            if ((this.Mst_POSMUnitType_DeleteOperationCompleted == null)) {
+                this.Mst_POSMUnitType_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSMUnitType_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSMUnitType_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMUnitType}, this.Mst_POSMUnitType_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSMUnitType_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_POSMUnitType_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSMUnitType_DeleteCompleted(this, new Mst_POSMUnitType_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSM_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSM_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSM) {
+            object[] results = this.Invoke("Mst_POSM_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_POSM});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSM) {
+            this.Mst_POSM_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_POSM, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_POSM, object userState) {
+            if ((this.Mst_POSM_GetOperationCompleted == null)) {
+                this.Mst_POSM_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSM_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSM_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_POSM}, this.Mst_POSM_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSM_GetOperationCompleted(object arg) {
+            if ((this.Mst_POSM_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSM_GetCompleted(this, new Mst_POSM_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSM_Create", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSM_Create(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object objPOSMType, object objPOSMUnitType, object objPOSMName, object objPOSMDesc, object objPOSMImageFilePath) {
+            object[] results = this.Invoke("Mst_POSM_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMCode,
+                        objPOSMType,
+                        objPOSMUnitType,
+                        objPOSMName,
+                        objPOSMDesc,
+                        objPOSMImageFilePath});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object objPOSMType, object objPOSMUnitType, object objPOSMName, object objPOSMDesc, object objPOSMImageFilePath) {
+            this.Mst_POSM_CreateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMCode, objPOSMType, objPOSMUnitType, objPOSMName, objPOSMDesc, objPOSMImageFilePath, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object objPOSMType, object objPOSMUnitType, object objPOSMName, object objPOSMDesc, object objPOSMImageFilePath, object userState) {
+            if ((this.Mst_POSM_CreateOperationCompleted == null)) {
+                this.Mst_POSM_CreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSM_CreateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSM_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMCode,
+                        objPOSMType,
+                        objPOSMUnitType,
+                        objPOSMName,
+                        objPOSMDesc,
+                        objPOSMImageFilePath}, this.Mst_POSM_CreateOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSM_CreateOperationCompleted(object arg) {
+            if ((this.Mst_POSM_CreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSM_CreateCompleted(this, new Mst_POSM_CreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSM_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSM_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object objPOSMType, object objPOSMUnitType, object objPOSMName, object objPOSMDesc, object objPOSMImageFilePath, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_POSM_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMCode,
+                        objPOSMType,
+                        objPOSMUnitType,
+                        objPOSMName,
+                        objPOSMDesc,
+                        objPOSMImageFilePath,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object objPOSMType, object objPOSMUnitType, object objPOSMName, object objPOSMDesc, object objPOSMImageFilePath, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_POSM_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMCode, objPOSMType, objPOSMUnitType, objPOSMName, objPOSMDesc, objPOSMImageFilePath, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object objPOSMType, object objPOSMUnitType, object objPOSMName, object objPOSMDesc, object objPOSMImageFilePath, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_POSM_UpdateOperationCompleted == null)) {
+                this.Mst_POSM_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSM_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSM_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMCode,
+                        objPOSMType,
+                        objPOSMUnitType,
+                        objPOSMName,
+                        objPOSMDesc,
+                        objPOSMImageFilePath,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_POSM_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSM_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_POSM_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSM_UpdateCompleted(this, new Mst_POSM_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_POSM_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_POSM_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode) {
+            object[] results = this.Invoke("Mst_POSM_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMCode});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode) {
+            this.Mst_POSM_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objPOSMCode, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_POSM_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objPOSMCode, object userState) {
+            if ((this.Mst_POSM_DeleteOperationCompleted == null)) {
+                this.Mst_POSM_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_POSM_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_POSM_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objPOSMCode}, this.Mst_POSM_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_POSM_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_POSM_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_POSM_DeleteCompleted(this, new Mst_POSM_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopGroup_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopGroup_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopGroup) {
+            object[] results = this.Invoke("Mst_StarShopGroup_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_StarShopGroup});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopGroup) {
+            this.Mst_StarShopGroup_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_StarShopGroup, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopGroup, object userState) {
+            if ((this.Mst_StarShopGroup_GetOperationCompleted == null)) {
+                this.Mst_StarShopGroup_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopGroup_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopGroup_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_StarShopGroup}, this.Mst_StarShopGroup_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopGroup_GetOperationCompleted(object arg) {
+            if ((this.Mst_StarShopGroup_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopGroup_GetCompleted(this, new Mst_StarShopGroup_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopGroup_Create", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopGroup_Create(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSGrpName) {
+            object[] results = this.Invoke("Mst_StarShopGroup_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSGrpName});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSGrpName) {
+            this.Mst_StarShopGroup_CreateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSGrpCode, objSSGrpName, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSGrpName, object userState) {
+            if ((this.Mst_StarShopGroup_CreateOperationCompleted == null)) {
+                this.Mst_StarShopGroup_CreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopGroup_CreateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopGroup_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSGrpName}, this.Mst_StarShopGroup_CreateOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopGroup_CreateOperationCompleted(object arg) {
+            if ((this.Mst_StarShopGroup_CreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopGroup_CreateCompleted(this, new Mst_StarShopGroup_CreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopGroup_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopGroup_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSGrpName, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_StarShopGroup_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSGrpName,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSGrpName, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_StarShopGroup_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSGrpCode, objSSGrpName, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSGrpName, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_StarShopGroup_UpdateOperationCompleted == null)) {
+                this.Mst_StarShopGroup_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopGroup_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopGroup_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSGrpName,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_StarShopGroup_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopGroup_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_StarShopGroup_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopGroup_UpdateCompleted(this, new Mst_StarShopGroup_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopGroup_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopGroup_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode) {
+            object[] results = this.Invoke("Mst_StarShopGroup_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode) {
+            this.Mst_StarShopGroup_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSGrpCode, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopGroup_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object userState) {
+            if ((this.Mst_StarShopGroup_DeleteOperationCompleted == null)) {
+                this.Mst_StarShopGroup_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopGroup_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopGroup_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode}, this.Mst_StarShopGroup_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopGroup_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_StarShopGroup_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopGroup_DeleteCompleted(this, new Mst_StarShopGroup_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopBrand_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopBrand_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopBrand) {
+            object[] results = this.Invoke("Mst_StarShopBrand_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_StarShopBrand});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopBrand) {
+            this.Mst_StarShopBrand_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_StarShopBrand, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopBrand, object userState) {
+            if ((this.Mst_StarShopBrand_GetOperationCompleted == null)) {
+                this.Mst_StarShopBrand_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopBrand_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopBrand_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_StarShopBrand}, this.Mst_StarShopBrand_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopBrand_GetOperationCompleted(object arg) {
+            if ((this.Mst_StarShopBrand_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopBrand_GetCompleted(this, new Mst_StarShopBrand_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopBrand_Create", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopBrand_Create(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object objSSBrandName) {
+            object[] results = this.Invoke("Mst_StarShopBrand_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSBrandCode,
+                        objSSBrandName});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object objSSBrandName) {
+            this.Mst_StarShopBrand_CreateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSBrandCode, objSSBrandName, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object objSSBrandName, object userState) {
+            if ((this.Mst_StarShopBrand_CreateOperationCompleted == null)) {
+                this.Mst_StarShopBrand_CreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopBrand_CreateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopBrand_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSBrandCode,
+                        objSSBrandName}, this.Mst_StarShopBrand_CreateOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopBrand_CreateOperationCompleted(object arg) {
+            if ((this.Mst_StarShopBrand_CreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopBrand_CreateCompleted(this, new Mst_StarShopBrand_CreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopBrand_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopBrand_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object objSSBrandName, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_StarShopBrand_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSBrandCode,
+                        objSSBrandName,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object objSSBrandName, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_StarShopBrand_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSBrandCode, objSSBrandName, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object objSSBrandName, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_StarShopBrand_UpdateOperationCompleted == null)) {
+                this.Mst_StarShopBrand_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopBrand_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopBrand_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSBrandCode,
+                        objSSBrandName,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_StarShopBrand_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopBrand_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_StarShopBrand_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopBrand_UpdateCompleted(this, new Mst_StarShopBrand_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopBrand_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopBrand_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode) {
+            object[] results = this.Invoke("Mst_StarShopBrand_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSBrandCode});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode) {
+            this.Mst_StarShopBrand_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSBrandCode, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopBrand_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSBrandCode, object userState) {
+            if ((this.Mst_StarShopBrand_DeleteOperationCompleted == null)) {
+                this.Mst_StarShopBrand_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopBrand_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopBrand_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSBrandCode}, this.Mst_StarShopBrand_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopBrand_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_StarShopBrand_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopBrand_DeleteCompleted(this, new Mst_StarShopBrand_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopType_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopType_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopType) {
+            object[] results = this.Invoke("Mst_StarShopType_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_StarShopType});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopType) {
+            this.Mst_StarShopType_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_StarShopType, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_StarShopType, object userState) {
+            if ((this.Mst_StarShopType_GetOperationCompleted == null)) {
+                this.Mst_StarShopType_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopType_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopType_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_StarShopType}, this.Mst_StarShopType_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopType_GetOperationCompleted(object arg) {
+            if ((this.Mst_StarShopType_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopType_GetCompleted(this, new Mst_StarShopType_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopType_Create", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopType_Create(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object objSSTypeName, object objSSRate) {
+            object[] results = this.Invoke("Mst_StarShopType_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSBrandCode,
+                        objSSTypeName,
+                        objSSRate});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object objSSTypeName, object objSSRate) {
+            this.Mst_StarShopType_CreateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSGrpCode, objSSBrandCode, objSSTypeName, objSSRate, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_CreateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object objSSTypeName, object objSSRate, object userState) {
+            if ((this.Mst_StarShopType_CreateOperationCompleted == null)) {
+                this.Mst_StarShopType_CreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopType_CreateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopType_Create", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSBrandCode,
+                        objSSTypeName,
+                        objSSRate}, this.Mst_StarShopType_CreateOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopType_CreateOperationCompleted(object arg) {
+            if ((this.Mst_StarShopType_CreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopType_CreateCompleted(this, new Mst_StarShopType_CreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopType_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopType_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object objSSTypeName, object objSSRate, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_StarShopType_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSBrandCode,
+                        objSSTypeName,
+                        objSSRate,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object objSSTypeName, object objSSRate, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_StarShopType_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSGrpCode, objSSBrandCode, objSSTypeName, objSSRate, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object objSSTypeName, object objSSRate, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_StarShopType_UpdateOperationCompleted == null)) {
+                this.Mst_StarShopType_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopType_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopType_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSBrandCode,
+                        objSSTypeName,
+                        objSSRate,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_StarShopType_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopType_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_StarShopType_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopType_UpdateCompleted(this, new Mst_StarShopType_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_StarShopType_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_StarShopType_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode) {
+            object[] results = this.Invoke("Mst_StarShopType_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSBrandCode});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode) {
+            this.Mst_StarShopType_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objSSGrpCode, objSSBrandCode, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_StarShopType_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objSSGrpCode, object objSSBrandCode, object userState) {
+            if ((this.Mst_StarShopType_DeleteOperationCompleted == null)) {
+                this.Mst_StarShopType_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_StarShopType_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_StarShopType_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objSSGrpCode,
+                        objSSBrandCode}, this.Mst_StarShopType_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_StarShopType_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_StarShopType_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_StarShopType_DeleteCompleted(this, new Mst_StarShopType_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_CampainCriteria_Get", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_CampainCriteria_Get(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_CampainCriteria) {
+            object[] results = this.Invoke("Mst_CampainCriteria_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_CampainCriteria});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_CampainCriteria) {
+            this.Mst_CampainCriteria_GetAsync(strGwUserCode, strGwPassword, strTid, strSessionId, strFt_RecordStart, strFt_RecordCount, strFt_WhereClause, strRt_Cols_Mst_CampainCriteria, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_GetAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, string strFt_RecordStart, string strFt_RecordCount, string strFt_WhereClause, string strRt_Cols_Mst_CampainCriteria, object userState) {
+            if ((this.Mst_CampainCriteria_GetOperationCompleted == null)) {
+                this.Mst_CampainCriteria_GetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_CampainCriteria_GetOperationCompleted);
+            }
+            this.InvokeAsync("Mst_CampainCriteria_Get", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        strFt_RecordStart,
+                        strFt_RecordCount,
+                        strFt_WhereClause,
+                        strRt_Cols_Mst_CampainCriteria}, this.Mst_CampainCriteria_GetOperationCompleted, userState);
+        }
+        
+        private void OnMst_CampainCriteria_GetOperationCompleted(object arg) {
+            if ((this.Mst_CampainCriteria_GetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_CampainCriteria_GetCompleted(this, new Mst_CampainCriteria_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_CampainCriteria_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_CampainCriteria_Update(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCrCode, object objCampaignCrName, object objCampainCriteriaType, object objCreateDTime, object objCreateBy, object objFlagActive, object objFt_Cols_Upd) {
+            object[] results = this.Invoke("Mst_CampainCriteria_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCrCode,
+                        objCampaignCrName,
+                        objCampainCriteriaType,
+                        objCreateDTime,
+                        objCreateBy,
+                        objFlagActive,
+                        objFt_Cols_Upd});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCrCode, object objCampaignCrName, object objCampainCriteriaType, object objCreateDTime, object objCreateBy, object objFlagActive, object objFt_Cols_Upd) {
+            this.Mst_CampainCriteria_UpdateAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objCampaignCrCode, objCampaignCrName, objCampainCriteriaType, objCreateDTime, objCreateBy, objFlagActive, objFt_Cols_Upd, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_UpdateAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCrCode, object objCampaignCrName, object objCampainCriteriaType, object objCreateDTime, object objCreateBy, object objFlagActive, object objFt_Cols_Upd, object userState) {
+            if ((this.Mst_CampainCriteria_UpdateOperationCompleted == null)) {
+                this.Mst_CampainCriteria_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_CampainCriteria_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Mst_CampainCriteria_Update", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCrCode,
+                        objCampaignCrName,
+                        objCampainCriteriaType,
+                        objCreateDTime,
+                        objCreateBy,
+                        objFlagActive,
+                        objFt_Cols_Upd}, this.Mst_CampainCriteria_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnMst_CampainCriteria_UpdateOperationCompleted(object arg) {
+            if ((this.Mst_CampainCriteria_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_CampainCriteria_UpdateCompleted(this, new Mst_CampainCriteria_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_CampainCriteria_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_CampainCriteria_Delete(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCrCode) {
+            object[] results = this.Invoke("Mst_CampainCriteria_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCrCode});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCrCode) {
+            this.Mst_CampainCriteria_DeleteAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objCampaignCrCode, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_DeleteAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCrCode, object userState) {
+            if ((this.Mst_CampainCriteria_DeleteOperationCompleted == null)) {
+                this.Mst_CampainCriteria_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_CampainCriteria_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Mst_CampainCriteria_Delete", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCrCode}, this.Mst_CampainCriteria_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnMst_CampainCriteria_DeleteOperationCompleted(object arg) {
+            if ((this.Mst_CampainCriteria_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_CampainCriteria_DeleteCompleted(this, new Mst_CampainCriteria_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Mst_CampainCriteria_Save", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Mst_CampainCriteria_Save(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objFlagIsDelete, object objCampaignCrCode, object objCampaignCrName, object objCampainCriteriaType, object[] arrobjDSData) {
+            object[] results = this.Invoke("Mst_CampainCriteria_Save", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objFlagIsDelete,
+                        objCampaignCrCode,
+                        objCampaignCrName,
+                        objCampainCriteriaType,
+                        arrobjDSData});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_SaveAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objFlagIsDelete, object objCampaignCrCode, object objCampaignCrName, object objCampainCriteriaType, object[] arrobjDSData) {
+            this.Mst_CampainCriteria_SaveAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objFlagIsDelete, objCampaignCrCode, objCampaignCrName, objCampainCriteriaType, arrobjDSData, null);
+        }
+        
+        /// <remarks/>
+        public void Mst_CampainCriteria_SaveAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objFlagIsDelete, object objCampaignCrCode, object objCampaignCrName, object objCampainCriteriaType, object[] arrobjDSData, object userState) {
+            if ((this.Mst_CampainCriteria_SaveOperationCompleted == null)) {
+                this.Mst_CampainCriteria_SaveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMst_CampainCriteria_SaveOperationCompleted);
+            }
+            this.InvokeAsync("Mst_CampainCriteria_Save", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objFlagIsDelete,
+                        objCampaignCrCode,
+                        objCampaignCrName,
+                        objCampainCriteriaType,
+                        arrobjDSData}, this.Mst_CampainCriteria_SaveOperationCompleted, userState);
+        }
+        
+        private void OnMst_CampainCriteria_SaveOperationCompleted(object arg) {
+            if ((this.Mst_CampainCriteria_SaveCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Mst_CampainCriteria_SaveCompleted(this, new Mst_CampainCriteria_SaveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Aud_Campaign_Save", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Aud_Campaign_Save(
+                    string strGwUserCode, 
+                    string strGwPassword, 
+                    string strTid, 
+                    string strSessionId, 
+                    object objFlagIsDelete, 
+                    object objCampaignCode, 
+                    object objCampaignCrCode, 
+                    object objCrtrScoreVerCode, 
+                    object objCrtrScoreVerAUCode, 
+                    object objCampaignName, 
+                    object objEffDTimeStart, 
+                    object objEffDTimeEnd, 
+                    object objQtyCheck, 
+                    object objQtySuccess, 
+                    object objMinIntervalDays, 
+                    object objReportEndDate, 
+                    object[] arrobjDSData) {
+            object[] results = this.Invoke("Aud_Campaign_Save", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objFlagIsDelete,
+                        objCampaignCode,
+                        objCampaignCrCode,
+                        objCrtrScoreVerCode,
+                        objCrtrScoreVerAUCode,
+                        objCampaignName,
+                        objEffDTimeStart,
+                        objEffDTimeEnd,
+                        objQtyCheck,
+                        objQtySuccess,
+                        objMinIntervalDays,
+                        objReportEndDate,
+                        arrobjDSData});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Aud_Campaign_SaveAsync(
+                    string strGwUserCode, 
+                    string strGwPassword, 
+                    string strTid, 
+                    string strSessionId, 
+                    object objFlagIsDelete, 
+                    object objCampaignCode, 
+                    object objCampaignCrCode, 
+                    object objCrtrScoreVerCode, 
+                    object objCrtrScoreVerAUCode, 
+                    object objCampaignName, 
+                    object objEffDTimeStart, 
+                    object objEffDTimeEnd, 
+                    object objQtyCheck, 
+                    object objQtySuccess, 
+                    object objMinIntervalDays, 
+                    object objReportEndDate, 
+                    object[] arrobjDSData) {
+            this.Aud_Campaign_SaveAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objFlagIsDelete, objCampaignCode, objCampaignCrCode, objCrtrScoreVerCode, objCrtrScoreVerAUCode, objCampaignName, objEffDTimeStart, objEffDTimeEnd, objQtyCheck, objQtySuccess, objMinIntervalDays, objReportEndDate, arrobjDSData, null);
+        }
+        
+        /// <remarks/>
+        public void Aud_Campaign_SaveAsync(
+                    string strGwUserCode, 
+                    string strGwPassword, 
+                    string strTid, 
+                    string strSessionId, 
+                    object objFlagIsDelete, 
+                    object objCampaignCode, 
+                    object objCampaignCrCode, 
+                    object objCrtrScoreVerCode, 
+                    object objCrtrScoreVerAUCode, 
+                    object objCampaignName, 
+                    object objEffDTimeStart, 
+                    object objEffDTimeEnd, 
+                    object objQtyCheck, 
+                    object objQtySuccess, 
+                    object objMinIntervalDays, 
+                    object objReportEndDate, 
+                    object[] arrobjDSData, 
+                    object userState) {
+            if ((this.Aud_Campaign_SaveOperationCompleted == null)) {
+                this.Aud_Campaign_SaveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAud_Campaign_SaveOperationCompleted);
+            }
+            this.InvokeAsync("Aud_Campaign_Save", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objFlagIsDelete,
+                        objCampaignCode,
+                        objCampaignCrCode,
+                        objCrtrScoreVerCode,
+                        objCrtrScoreVerAUCode,
+                        objCampaignName,
+                        objEffDTimeStart,
+                        objEffDTimeEnd,
+                        objQtyCheck,
+                        objQtySuccess,
+                        objMinIntervalDays,
+                        objReportEndDate,
+                        arrobjDSData}, this.Aud_Campaign_SaveOperationCompleted, userState);
+        }
+        
+        private void OnAud_Campaign_SaveOperationCompleted(object arg) {
+            if ((this.Aud_Campaign_SaveCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Aud_Campaign_SaveCompleted(this, new Aud_Campaign_SaveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Aud_Campaign_Approve", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Aud_Campaign_Approve(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCode, object objRemark) {
+            object[] results = this.Invoke("Aud_Campaign_Approve", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCode,
+                        objRemark});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Aud_Campaign_ApproveAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCode, object objRemark) {
+            this.Aud_Campaign_ApproveAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objCampaignCode, objRemark, null);
+        }
+        
+        /// <remarks/>
+        public void Aud_Campaign_ApproveAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCode, object objRemark, object userState) {
+            if ((this.Aud_Campaign_ApproveOperationCompleted == null)) {
+                this.Aud_Campaign_ApproveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAud_Campaign_ApproveOperationCompleted);
+            }
+            this.InvokeAsync("Aud_Campaign_Approve", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCode,
+                        objRemark}, this.Aud_Campaign_ApproveOperationCompleted, userState);
+        }
+        
+        private void OnAud_Campaign_ApproveOperationCompleted(object arg) {
+            if ((this.Aud_Campaign_ApproveCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Aud_Campaign_ApproveCompleted(this, new Aud_Campaign_ApproveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Aud_Campaign_Cancel", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Aud_Campaign_Cancel(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCode, object objRemark) {
+            object[] results = this.Invoke("Aud_Campaign_Cancel", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCode,
+                        objRemark});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Aud_Campaign_CancelAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCode, object objRemark) {
+            this.Aud_Campaign_CancelAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objCampaignCode, objRemark, null);
+        }
+        
+        /// <remarks/>
+        public void Aud_Campaign_CancelAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objCampaignCode, object objRemark, object userState) {
+            if ((this.Aud_Campaign_CancelOperationCompleted == null)) {
+                this.Aud_Campaign_CancelOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAud_Campaign_CancelOperationCompleted);
+            }
+            this.InvokeAsync("Aud_Campaign_Cancel", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objCampaignCode,
+                        objRemark}, this.Aud_Campaign_CancelOperationCompleted, userState);
+        }
+        
+        private void OnAud_Campaign_CancelOperationCompleted(object arg) {
+            if ((this.Aud_Campaign_CancelCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Aud_Campaign_CancelCompleted(this, new Aud_Campaign_CancelCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Aud_CampaignDBReceive_Save", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public object[] Aud_CampaignDBReceive_Save(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objFlagIsDelete, object objDBReceiveNo, object objCampaignCode, object[] arrobjDSData) {
+            object[] results = this.Invoke("Aud_CampaignDBReceive_Save", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objFlagIsDelete,
+                        objDBReceiveNo,
+                        objCampaignCode,
+                        arrobjDSData});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Aud_CampaignDBReceive_SaveAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objFlagIsDelete, object objDBReceiveNo, object objCampaignCode, object[] arrobjDSData) {
+            this.Aud_CampaignDBReceive_SaveAsync(strGwUserCode, strGwPassword, strTid, strSessionId, objFlagIsDelete, objDBReceiveNo, objCampaignCode, arrobjDSData, null);
+        }
+        
+        /// <remarks/>
+        public void Aud_CampaignDBReceive_SaveAsync(string strGwUserCode, string strGwPassword, string strTid, string strSessionId, object objFlagIsDelete, object objDBReceiveNo, object objCampaignCode, object[] arrobjDSData, object userState) {
+            if ((this.Aud_CampaignDBReceive_SaveOperationCompleted == null)) {
+                this.Aud_CampaignDBReceive_SaveOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAud_CampaignDBReceive_SaveOperationCompleted);
+            }
+            this.InvokeAsync("Aud_CampaignDBReceive_Save", new object[] {
+                        strGwUserCode,
+                        strGwPassword,
+                        strTid,
+                        strSessionId,
+                        objFlagIsDelete,
+                        objDBReceiveNo,
+                        objCampaignCode,
+                        arrobjDSData}, this.Aud_CampaignDBReceive_SaveOperationCompleted, userState);
+        }
+        
+        private void OnAud_CampaignDBReceive_SaveOperationCompleted(object arg) {
+            if ((this.Aud_CampaignDBReceive_SaveCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Aud_CampaignDBReceive_SaveCompleted(this, new Aud_CampaignDBReceive_SaveCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -3980,6 +5546,838 @@ namespace ZTest01.WSDVNAUD {
         private object[] results;
         
         internal Sys_Object_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMType_GetCompletedEventHandler(object sender, Mst_POSMType_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMType_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMType_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMType_CreateCompletedEventHandler(object sender, Mst_POSMType_CreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMType_CreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMType_CreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMType_UpdateCompletedEventHandler(object sender, Mst_POSMType_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMType_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMType_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMType_DeleteCompletedEventHandler(object sender, Mst_POSMType_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMType_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMType_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMUnitType_GetCompletedEventHandler(object sender, Mst_POSMUnitType_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMUnitType_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMUnitType_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMUnitType_CreateCompletedEventHandler(object sender, Mst_POSMUnitType_CreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMUnitType_CreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMUnitType_CreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMUnitType_UpdateCompletedEventHandler(object sender, Mst_POSMUnitType_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMUnitType_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMUnitType_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSMUnitType_DeleteCompletedEventHandler(object sender, Mst_POSMUnitType_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSMUnitType_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSMUnitType_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSM_GetCompletedEventHandler(object sender, Mst_POSM_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSM_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSM_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSM_CreateCompletedEventHandler(object sender, Mst_POSM_CreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSM_CreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSM_CreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSM_UpdateCompletedEventHandler(object sender, Mst_POSM_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSM_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSM_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_POSM_DeleteCompletedEventHandler(object sender, Mst_POSM_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_POSM_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_POSM_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopGroup_GetCompletedEventHandler(object sender, Mst_StarShopGroup_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopGroup_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopGroup_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopGroup_CreateCompletedEventHandler(object sender, Mst_StarShopGroup_CreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopGroup_CreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopGroup_CreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopGroup_UpdateCompletedEventHandler(object sender, Mst_StarShopGroup_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopGroup_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopGroup_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopGroup_DeleteCompletedEventHandler(object sender, Mst_StarShopGroup_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopGroup_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopGroup_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopBrand_GetCompletedEventHandler(object sender, Mst_StarShopBrand_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopBrand_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopBrand_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopBrand_CreateCompletedEventHandler(object sender, Mst_StarShopBrand_CreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopBrand_CreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopBrand_CreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopBrand_UpdateCompletedEventHandler(object sender, Mst_StarShopBrand_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopBrand_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopBrand_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopBrand_DeleteCompletedEventHandler(object sender, Mst_StarShopBrand_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopBrand_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopBrand_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopType_GetCompletedEventHandler(object sender, Mst_StarShopType_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopType_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopType_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopType_CreateCompletedEventHandler(object sender, Mst_StarShopType_CreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopType_CreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopType_CreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopType_UpdateCompletedEventHandler(object sender, Mst_StarShopType_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopType_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopType_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_StarShopType_DeleteCompletedEventHandler(object sender, Mst_StarShopType_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_StarShopType_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_StarShopType_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_CampainCriteria_GetCompletedEventHandler(object sender, Mst_CampainCriteria_GetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_CampainCriteria_GetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_CampainCriteria_GetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_CampainCriteria_UpdateCompletedEventHandler(object sender, Mst_CampainCriteria_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_CampainCriteria_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_CampainCriteria_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_CampainCriteria_DeleteCompletedEventHandler(object sender, Mst_CampainCriteria_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_CampainCriteria_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_CampainCriteria_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Mst_CampainCriteria_SaveCompletedEventHandler(object sender, Mst_CampainCriteria_SaveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Mst_CampainCriteria_SaveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Mst_CampainCriteria_SaveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Aud_Campaign_SaveCompletedEventHandler(object sender, Aud_Campaign_SaveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Aud_Campaign_SaveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Aud_Campaign_SaveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Aud_Campaign_ApproveCompletedEventHandler(object sender, Aud_Campaign_ApproveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Aud_Campaign_ApproveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Aud_Campaign_ApproveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Aud_Campaign_CancelCompletedEventHandler(object sender, Aud_Campaign_CancelCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Aud_Campaign_CancelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Aud_Campaign_CancelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void Aud_CampaignDBReceive_SaveCompletedEventHandler(object sender, Aud_CampaignDBReceive_SaveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Aud_CampaignDBReceive_SaveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Aud_CampaignDBReceive_SaveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

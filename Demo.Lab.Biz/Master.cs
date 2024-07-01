@@ -6114,5 +6114,142 @@ namespace Demo.Lab.Biz
 			}
 		}
 		#endregion
+
+		#region // Mst_CriteriaScoreVersion:
+		private void Mst_CriteriaScoreVersion_CheckDB(
+			ref ArrayList alParamsCoupleError
+			, object objCrtrScoreVerCode
+			, string strFlagExistToCheck
+			, string strFlagActiveListToCheck
+			, out DataTable dtDB_Mst_CriteriaScoreVersion
+			)
+		{
+			// GetInfo:
+			string strSqlExec = CmUtils.StringUtils.Replace(@"
+					select top 1
+						t.*
+					from Mst_CriteriaScoreVersion t --//[mylock]
+					where (1=1)
+						and t.CrtrScoreVerCode = @objCrtrScoreVerCode
+					;
+				");
+			dtDB_Mst_CriteriaScoreVersion = _cf.db.ExecQuery(
+				strSqlExec
+				, "@objCrtrScoreVerCode", objCrtrScoreVerCode
+				).Tables[0];
+			dtDB_Mst_CriteriaScoreVersion.TableName = "Mst_CriteriaScoreVersion";
+
+			// strFlagExistToCheck
+			if (strFlagExistToCheck.Length > 0)
+			{
+				if (CmUtils.StringUtils.StringEqual(strFlagExistToCheck, TConst.Flag.Active) && dtDB_Mst_CriteriaScoreVersion.Rows.Count < 1)
+				{
+					alParamsCoupleError.AddRange(new object[]{
+						"Check.CrtrScoreVerCode", objCrtrScoreVerCode
+						});
+					throw CmUtils.CMyException.Raise(
+						TError.ErrDemoLab.Mst_CriteriaScoreVersion_CheckDB_CriteriaScoreVersionNotFound
+						, null
+						, alParamsCoupleError.ToArray()
+						);
+				}
+				if (CmUtils.StringUtils.StringEqual(strFlagExistToCheck, TConst.Flag.Inactive) && dtDB_Mst_CriteriaScoreVersion.Rows.Count > 0)
+				{
+					alParamsCoupleError.AddRange(new object[]{
+						"Check.CrtrScoreVerCode", objCrtrScoreVerCode
+						});
+					throw CmUtils.CMyException.Raise(
+						TError.ErrDemoLab.Mst_CriteriaScoreVersion_CheckDB_CriteriaScoreVersionExist
+						, null
+						, alParamsCoupleError.ToArray()
+						);
+				}
+			}
+
+			// strFlagActiveListToCheck
+			if (strFlagActiveListToCheck.Length > 0 && !strFlagActiveListToCheck.Contains(Convert.ToString(dtDB_Mst_CriteriaScoreVersion.Rows[0]["FlagActive"])))
+			{
+				alParamsCoupleError.AddRange(new object[]{
+					"Check.CrtrScoreVerCode", objCrtrScoreVerCode
+					, "Check.strFlagActiveListToCheck", strFlagActiveListToCheck
+					, "DB.FlagActive", dtDB_Mst_CriteriaScoreVersion.Rows[0]["FlagActive"]
+					});
+				throw CmUtils.CMyException.Raise(
+					TError.ErrDemoLab.Mst_CriteriaScoreVersion_CheckDB_FlagActiveNotMatched
+					, null
+					, alParamsCoupleError.ToArray()
+					);
+			}
+		}
+		#endregion
+
+		#region // Mst_CriteriaScoreVersionAuditUser:
+		private void Mst_CriteriaScoreVersionAuditUser_CheckDB(
+			ref ArrayList alParamsCoupleError
+			, object objCrtrScoreVerAUCode
+			, string strFlagExistToCheck
+			, string strFlagActiveListToCheck
+			, out DataTable dtDB_Mst_CriteriaScoreVersionAuditUser
+			)
+		{
+			// GetInfo:
+			string strSqlExec = CmUtils.StringUtils.Replace(@"
+					select top 1
+						t.*
+					from Mst_CriteriaScoreVersionAuditUser t --//[mylock]
+					where (1=1)
+						and t.CrtrScoreVerAUCode = @objCrtrScoreVerAUCode
+					;
+				");
+			dtDB_Mst_CriteriaScoreVersionAuditUser = _cf.db.ExecQuery(
+				strSqlExec
+				, "@objCrtrScoreVerAUCode", objCrtrScoreVerAUCode
+				).Tables[0];
+			dtDB_Mst_CriteriaScoreVersionAuditUser.TableName = "Mst_CriteriaScoreVersionAuditUser";
+
+			// strFlagExistToCheck
+			if (strFlagExistToCheck.Length > 0)
+			{
+				if (CmUtils.StringUtils.StringEqual(strFlagExistToCheck, TConst.Flag.Active) && dtDB_Mst_CriteriaScoreVersionAuditUser.Rows.Count < 1)
+				{
+					alParamsCoupleError.AddRange(new object[]{
+						"Check.CrtrScoreVerAUCode", objCrtrScoreVerAUCode
+						});
+					throw CmUtils.CMyException.Raise(
+						TError.ErrDemoLab.Mst_CriteriaScoreVersionAuditUser_CheckDB_CriteriaScoreVersionAuditUserNotFound
+						, null
+						, alParamsCoupleError.ToArray()
+						);
+				}
+				if (CmUtils.StringUtils.StringEqual(strFlagExistToCheck, TConst.Flag.Inactive) && dtDB_Mst_CriteriaScoreVersionAuditUser.Rows.Count > 0)
+				{
+					alParamsCoupleError.AddRange(new object[]{
+						"Check.CrtrScoreVerAUCode", objCrtrScoreVerAUCode
+						});
+					throw CmUtils.CMyException.Raise(
+						TError.ErrDemoLab.Mst_CriteriaScoreVersionAuditUser_CheckDB_CriteriaScoreVersionAuditUserExist
+						, null
+						, alParamsCoupleError.ToArray()
+						);
+				}
+			}
+
+			// strFlagActiveListToCheck
+			if (strFlagActiveListToCheck.Length > 0 && !strFlagActiveListToCheck.Contains(Convert.ToString(dtDB_Mst_CriteriaScoreVersionAuditUser.Rows[0]["FlagActive"])))
+			{
+				alParamsCoupleError.AddRange(new object[]{
+					"Check.CrtrScoreVerAUCode", objCrtrScoreVerAUCode
+					, "Check.strFlagActiveListToCheck", strFlagActiveListToCheck
+					, "DB.FlagActive", dtDB_Mst_CriteriaScoreVersionAuditUser.Rows[0]["FlagActive"]
+					});
+				throw CmUtils.CMyException.Raise(
+					TError.ErrDemoLab.Mst_CriteriaScoreVersionAuditUser_CheckDB_FlagActiveNotMatched
+					, null
+					, alParamsCoupleError.ToArray()
+					);
+			}
+		}
+		#endregion
+
 	}
 }

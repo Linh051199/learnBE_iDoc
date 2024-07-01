@@ -195,11 +195,11 @@ namespace Demo.Lab.Biz
 					"
 					);
 				////
-				string zzB_Select_strFilter_zzE = "";
+				string zzB_Select_Mst_POSMType_zzE = "-- Nothing.";
 				if (bGet_Mst_POSMType)
 				{
 					#region // bGet_Mst_POSMType:
-					zzB_Select_strFilter_zzE = CmUtils.StringUtils.Replace(@"
+					zzB_Select_Mst_POSMType_zzE = CmUtils.StringUtils.Replace(@"
 							---- Mst_POSMType:
 							select
 								t.MyIdxSeq
@@ -245,7 +245,7 @@ namespace Demo.Lab.Biz
 				strSqlGetData = CmUtils.StringUtils.Replace(
 					strSqlGetData
 					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
-					, "zzB_Select_strFilter_zzE", zzB_Select_strFilter_zzE
+					, "zzB_Select_Mst_POSMType_zzE", zzB_Select_Mst_POSMType_zzE
 					);
 				#endregion
 

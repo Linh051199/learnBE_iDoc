@@ -14,3 +14,9 @@ D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constant
 D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
 D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.dll
 D:\BE\Learn\Lesson1\2014.Demo.Lab\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.pdb
+D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.dll
+D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.pdb
+D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.AssemblyReference.cache
+D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
+D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.dll
+D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.pdb

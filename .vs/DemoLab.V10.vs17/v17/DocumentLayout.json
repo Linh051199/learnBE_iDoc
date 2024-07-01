@@ -3,16 +3,27 @@
   "WorkspaceRootPath": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32F1302F-6A20-4628-8CC5-B69E5105B573}|Demo.Lab.WS\\Demo.Lab.WS.csproj|d:\\be\\learn\\lesson4\\learnbe_idoc\\demo.lab.ws\\ws.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7CBDB7D-E96B-4D0E-9CF7-214842D1A97A}|ZTest01\\ZTest01.csproj|d:\\be\\learn\\lesson4\\learnbe_idoc\\ztest01\\ztest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7CBDB7D-E96B-4D0E-9CF7-214842D1A97A}|ZTest01\\ZTest01.csproj|solutionrelative:ztest01\\ztest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32F1302F-6A20-4628-8CC5-B69E5105B573}|Demo.Lab.WS\\Demo.Lab.WS.csproj|D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\demo.lab.ws\\ws.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32F1302F-6A20-4628-8CC5-B69E5105B573}|Demo.Lab.WS\\Demo.Lab.WS.csproj|solutionrelative:demo.lab.ws\\ws.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8475334-089A-460F-9B70-2E6855F21223}|Demo.Lab.Biz\\Demo.Lab.Biz.csproj|d:\\be\\learn\\lesson4\\learnbe_idoc\\demo.lab.biz\\posm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8475334-089A-460F-9B70-2E6855F21223}|Demo.Lab.Biz\\Demo.Lab.Biz.csproj|solutionrelative:demo.lab.biz\\posm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8475334-089A-460F-9B70-2E6855F21223}|Demo.Lab.Biz\\Demo.Lab.Biz.csproj|D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\demo.lab.biz\\audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8475334-089A-460F-9B70-2E6855F21223}|Demo.Lab.Biz\\Demo.Lab.Biz.csproj|solutionrelative:demo.lab.biz\\audit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58EAF0AE-7360-4C85-BC0A-B1128A30CC8B}|Demo.Lab.Constants\\Demo.Lab.Constants.csproj|D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\demo.lab.constants\\error.dvn.aud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58EAF0AE-7360-4C85-BC0A-B1128A30CC8B}|Demo.Lab.Constants\\Demo.Lab.Constants.csproj|solutionrelative:demo.lab.constants\\error.dvn.aud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8475334-089A-460F-9B70-2E6855F21223}|Demo.Lab.Biz\\Demo.Lab.Biz.csproj|D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\demo.lab.biz\\master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8475334-089A-460F-9B70-2E6855F21223}|Demo.Lab.Biz\\Demo.Lab.Biz.csproj|solutionrelative:demo.lab.biz\\master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\BE\\Learn\\lesson7\\20180720.InvF_AccessoryIn_Save (2).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,35 +32,63 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 335,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 390,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Error.DVN.AUD.cs",
-              "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Constants\\Error.DVN.AUD.cs",
-              "RelativeDocumentMoniker": "Demo.Lab.Constants\\Error.DVN.AUD.cs",
-              "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Constants\\Error.DVN.AUD.cs",
-              "RelativeToolTip": "Demo.Lab.Constants\\Error.DVN.AUD.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAwAAAA",
+              "DocumentIndex": 0,
+              "Title": "ZTest.cs",
+              "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\ZTest01\\ZTest.cs",
+              "RelativeDocumentMoniker": "ZTest01\\ZTest.cs",
+              "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\ZTest01\\ZTest.cs",
+              "RelativeToolTip": "ZTest01\\ZTest.cs",
+              "ViewState": "AQIAAIsCAAAAAAAAAAAowCEDAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T09:33:26.263Z",
+              "WhenOpened": "2024-05-21T06:46:38.858Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WS.asmx.cs",
               "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.WS\\WS.asmx.cs",
               "RelativeDocumentMoniker": "Demo.Lab.WS\\WS.asmx.cs",
               "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.WS\\WS.asmx.cs",
               "RelativeToolTip": "Demo.Lab.WS\\WS.asmx.cs",
-              "ViewState": "AQIAAOEGAAAAAAAAAAAIwOwGAAAEAAAA",
+              "ViewState": "AQIAAEQMAAAAAAAAAAAwwMoMAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T08:04:14.08Z",
+              "WhenOpened": "2024-05-21T06:37:54.856Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Audit.cs",
+              "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Biz\\Audit.cs",
+              "RelativeDocumentMoniker": "Demo.Lab.Biz\\Audit.cs",
+              "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Biz\\Audit.cs",
+              "RelativeToolTip": "Demo.Lab.Biz\\Audit.cs",
+              "ViewState": "AQIAAAAGAAAAAAAAAAAmwCYGAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T14:55:53.036Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Error.DVN.AUD.cs",
+              "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Constants\\Error.DVN.AUD.cs",
+              "RelativeDocumentMoniker": "Demo.Lab.Constants\\Error.DVN.AUD.cs",
+              "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Constants\\Error.DVN.AUD.cs",
+              "RelativeToolTip": "Demo.Lab.Constants\\Error.DVN.AUD.cs",
+              "ViewState": "AQIAAOsDAAAAAAAAAAAiwDAEAACoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T04:34:33.446Z",
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -62,14 +101,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Master.cs",
-              "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Biz\\Master.cs",
-              "RelativeDocumentMoniker": "Demo.Lab.Biz\\Master.cs",
-              "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Biz\\Master.cs",
-              "RelativeToolTip": "Demo.Lab.Biz\\Master.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAowLQLAAAMAAAA",
+              "Title": "POSM.cs",
+              "DocumentMoniker": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Biz\\POSM.cs",
+              "RelativeDocumentMoniker": "Demo.Lab.Biz\\POSM.cs",
+              "ToolTip": "D:\\BE\\Learn\\lesson4\\learnBE_iDoc\\Demo.Lab.Biz\\POSM.cs",
+              "RelativeToolTip": "Demo.Lab.Biz\\POSM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0BAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T07:06:09.223Z"
+              "WhenOpened": "2024-06-30T16:14:23.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20180720.InvF_AccessoryIn_Save (2).cs",
+              "DocumentMoniker": "D:\\BE\\Learn\\lesson7\\20180720.InvF_AccessoryIn_Save (2).cs",
+              "RelativeDocumentMoniker": "..\\..\\lesson7\\20180720.InvF_AccessoryIn_Save (2).cs",
+              "ToolTip": "D:\\BE\\Learn\\lesson7\\20180720.InvF_AccessoryIn_Save (2).cs",
+              "RelativeToolTip": "..\\..\\lesson7\\20180720.InvF_AccessoryIn_Save (2).cs",
+              "ViewState": "AQIAAOUAAAAAAAAAAAAAAMEAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T09:16:29.52Z"
             }
           ]
         }
