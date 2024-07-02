@@ -990,7 +990,8 @@ namespace ZTest01
 										 // rFt_RecordCount	
 					, strFt_WhereClause  // strFt_WhereClause	
 										 ////	
-					, "*" // strRt_Cols_Mst_CampainCriteria	
+					, "*" // strRt_Cols_Mst_CampainCriteria
+					, "*" // strRt_Cols_Mst_CampainCriteriaScope
 					));
 
 				dtTable0 = mdsResult.Tables[0];

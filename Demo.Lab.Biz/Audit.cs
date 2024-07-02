@@ -1869,6 +1869,10 @@ namespace Demo.Lab.Biz
 			}
 		}
 		#endregion
-		 
+
+		#region MyRegion
+
+		#endregion
+
 	}
 }

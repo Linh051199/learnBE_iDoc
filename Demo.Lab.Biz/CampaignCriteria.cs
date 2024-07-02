@@ -186,6 +186,7 @@ namespace Demo.Lab.Biz
 			, string strFt_WhereClause
 			//// Return: 
 			, string strRt_Cols_Mst_CampainCriteria
+			, string strRt_Cols_Mst_CampainCriteriaScope
 			)
 		{
 			#region // Temp:
@@ -202,7 +203,8 @@ namespace Demo.Lab.Biz
 					, "strFt_RecordCount", strFt_RecordCount
 					, "strFt_WhereClause", strFt_WhereClause
 			//// Return
-					, "strRt_Cols_Mst_CampainCriteria", strRt_Cols_Mst_CampainCriteria
+					, "strRt_Cols_Mst_CampainCriteria", strRt_Cols_Mst_CampainCriteria                  
+					, "strRt_Cols_Mst_CampainCriteriaScope", strRt_Cols_Mst_CampainCriteriaScope
 					});
 			#endregion
 
@@ -231,6 +233,7 @@ namespace Demo.Lab.Biz
 				long nFilterRecordStart = Convert.ToInt64(strFt_RecordStart);
 				long nFilterRecordEnd = nFilterRecordStart + Convert.ToInt64(strFt_RecordCount) - 1;
 				bool bGet_Mst_CampainCriteria = (strRt_Cols_Mst_CampainCriteria != null && strRt_Cols_Mst_CampainCriteria.Length > 0);
+				bool bGet_Mst_CampainCriteriaScope = (strRt_Cols_Mst_CampainCriteriaScope != null && strRt_Cols_Mst_CampainCriteriaScope.Length > 0);
 
 				//// drAbitiltyOfUser
 				//DataRow drAbilityOfUser = myCache_ViewAbility_GetUserInfo(_cf.sinf.strUserCode);
@@ -254,6 +257,8 @@ namespace Demo.Lab.Biz
 							, mcc.CampaignCrCode
 						into #tbl_Mst_CampainCriteria_Filter_Draft
 						from Mst_CampainCriteria mcc --//[mylock]
+							left join Mst_CampainCriteriaScope mccs --//[mylock]
+								on mcc.CampaignCrCode = mccs.CampaignCrCode
 						where (1=1)
 							zzB_Where_strFilter_zzE
 						order by mcc.CampaignCrCode asc
@@ -275,6 +280,10 @@ namespace Demo.Lab.Biz
 
 						-------- Mst_CampainCriteria --------:
 						zzB_Select_Mst_CampainCriteria_zzE
+						----------------------------------------
+
+						-------- Mst_CampainCriteriaScope --------:
+						zzB_Select_Mst_CampainCriteriaScope_zzE
 						----------------------------------------
 
 						---- Clear for debug:
@@ -302,6 +311,33 @@ namespace Demo.Lab.Biz
 					#endregion
 				}
 				////
+				string zzB_Select_Mst_CampainCriteriaScope_zzE = "-- Nothing.";
+				if (bGet_Mst_CampainCriteria)
+				{
+					#region // bGet_Mst_CampainCriteriaScope:
+					zzB_Select_Mst_CampainCriteriaScope_zzE = CmUtils.StringUtils.Replace(@"
+							---- Mst_CampainCriteria:
+							select
+								t.MyIdxSeq
+								, mccs.*
+								, mccs.LevelCode mccs_LevelCode
+								, mccs.CampainCritScopeDesc mccs_CampainCritScopeDesc
+								, msst.SSTypeName msst_SSTypeName
+							from #tbl_Mst_CampainCriteria_Filter t --//[mylock]
+								inner join Mst_CampainCriteria mcc --//[mylock]
+									on t.CampaignCrCode = mcc.CampaignCrCode
+								inner join Mst_CampainCriteriaScope mccs --//[mylock]
+									on mcc.CampaignCrCode = mccs.CampaignCrCode
+								left join Mst_StarShopType msst --//[mylock]
+									on mccs.SSGrpCode = msst.SSGrpCode
+										and mccs.SSBrandCode = msst.SSBrandCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
 				string zzB_Where_strFilter_zzE = "";
 				{
 					Hashtable htSpCols = new Hashtable();
@@ -314,6 +350,14 @@ namespace Demo.Lab.Biz
 							, "Mst_CampainCriteria" // strTableNameDB
 							, "Mst_CampainCriteria." // strPrefixStd
 							, "mcc." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Mst_CampainCriteriaScope" // strTableNameDB
+							, "Mst_CampainCriteriaScope." // strPrefixStd
+							, "mccs." // strPrefixAlias
 							);
 						////
 						#endregion
@@ -334,6 +378,7 @@ namespace Demo.Lab.Biz
 					strSqlGetData
 					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
 					, "zzB_Select_Mst_CampainCriteria_zzE", zzB_Select_Mst_CampainCriteria_zzE
+					, "zzB_Select_Mst_CampainCriteriaScope_zzE", zzB_Select_Mst_CampainCriteriaScope_zzE
 					);
 				#endregion
 
@@ -347,6 +392,10 @@ namespace Demo.Lab.Biz
 				if (bGet_Mst_CampainCriteria)
 				{
 					dsGetData.Tables[nIdxTable++].TableName = "Mst_CampainCriteria";
+				}
+				if (bGet_Mst_CampainCriteriaScope)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "bGet_Mst_CampainCriteriaScope";
 				}
 				CmUtils.DataUtils.MoveDataTable(ref mdsFinal, ref dsGetData);
 				#endregion

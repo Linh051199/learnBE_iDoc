@@ -4783,6 +4783,7 @@ namespace Demo.Lab.WS
 			, string strFt_WhereClause
 			//// Return:
 			, string strRt_Cols_Mst_CampainCriteria
+			, string strRt_Cols_Mst_CampainCriteriaScope
 			)
 		{
 			// Temp:
@@ -4835,6 +4836,7 @@ namespace Demo.Lab.WS
 			, strFt_WhereClause
 			//// Return:
 			, strRt_Cols_Mst_CampainCriteria
+			, strRt_Cols_Mst_CampainCriteriaScope
 			));
 		}
 
