@@ -975,10 +975,10 @@ namespace ZTest01
 			}
 			#endregion
 
-			#region // Mst_CampainCriteria_Get_Get:
-			if (bTest)
+			#region // Mst_CampainCriteria_Get:
+			if (!bTest)
 			{
-				string strFt_WhereClause = "Mst_CampainCriteria_Get.CampaignCrCode = '20140623.153829' and Mst_CampainCriteria_Get.CampainCriteriaType = 'POSM' and Mst_CampainCriteria_Get.CreateDTime = '2024-05-15 14:26:49'";
+				string strFt_WhereClause = "Mst_CampainCriteria.CampaignCrCode = '20140623.153829' and Mst_CampainCriteria.CampainCriteriaType = 'POSM' and Mst_CampainCriteria.CreateDTime <= '2024-05-15 23:59:59' and Mst_CampainCriteria.CreateDTime >= '2024-05-15 00:00:00'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteria_Get(
 					strGwUserCode // strGwUserCode	
 					, strGwPassword // strGwPassword	
