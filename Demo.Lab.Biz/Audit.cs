@@ -88,6 +88,285 @@ namespace Demo.Lab.Biz
 					);
 			}
 		}
+		public DataSet Aud_Campaign_Get(
+			string strTid
+			, DataRow drSession
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return: 
+			, string strRt_Cols_Aud_Campaign
+			, string strRt_Cols_Aud_CampaignDBPOSMDtl
+			)
+		{
+			#region // Temp:
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			//init nTidSeq = 0;
+			DateTime dtimeSys = DateTime.Now;
+			string strFunctionName = "Mst_CampainCriteria_Get";
+			string strErrorCodeDefault = TError.ErrDemoLab.Mst_CampainCriteria_Get;
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+					"strFunctionName", strFunctionName
+					, "dtimeSys", dtimeSys.ToString("yyyy-MM-dd HH:mm:ss")
+			//// Filter
+					, "strFt_RecordStart", strFt_RecordStart
+					, "strFt_RecordCount", strFt_RecordCount
+					, "strFt_WhereClause", strFt_WhereClause
+			//// Return
+					, "strRt_Cols_Aud_Campaign", strRt_Cols_Aud_Campaign
+					, "strRt_Cols_Aud_CampaignDBPOSMDtl", strRt_Cols_Aud_CampaignDBPOSMDtl
+					});
+			#endregion
+
+			try
+			{
+				#region // Init:
+				_cf.db.LogUserId = _cf.sinf.strUserCode;
+				_cf.db.BeginTransaction();
+
+				// Write RequestLog:
+				_cf.ProcessBizReq(
+					strTid //strTid
+					, strFunctionName //strFunctionName
+					, alParamsCoupleError
+					);
+
+				// Check Access/Deny:
+				Sys_Access_CheckDeny(
+					ref alParamsCoupleError
+					, strFunctionName
+					);
+				#endregion
+
+				#region // Check:
+				//// Refine:
+				long nFilterRecordStart = Convert.ToInt64(strFt_RecordStart);
+				long nFilterRecordEnd = nFilterRecordStart + Convert.ToInt64(strFt_RecordCount) - 1;
+				bool bGet_Aud_Campaign = (strRt_Cols_Aud_Campaign != null && strRt_Cols_Aud_Campaign.Length > 0);
+				bool bGet_Aud_CampaignDBPOSMDtl = (strRt_Cols_Aud_CampaignDBPOSMDtl != null && strRt_Cols_Aud_CampaignDBPOSMDtl.Length > 0);
+
+				//// drAbitiltyOfUser
+				//DataRow drAbilityOfUser = myCache_ViewAbility_GetUserInfo(_cf.sinf.strUserCode);
+
+				#endregion
+
+				#region // Build Sql:
+				////
+				ArrayList alParamsCoupleSql = new ArrayList();
+				alParamsCoupleSql.AddRange(new object[]{
+					"@nFilterRecordStart", nFilterRecordStart
+					, "@nFilterRecordEnd", nFilterRecordEnd
+					});
+				////
+				//myCache_ViewAbility_GetDealerInfo(drAbitiltyOfUser)
+				////
+				string strSqlGetData = CmUtils.StringUtils.Replace(@"
+						---- #tbl_Aud_Campaign_Filter_Draft:
+						select distinct
+							identity(bigint, 0, 1) MyIdxSeq
+							, ac.CampaignCode
+							, acdbd.DBCode 
+							, md.AreaCode
+						into #tbl_Aud_Campaign_Filter_Draft
+						from Aud_Campaign ac --//[mylock]
+							left join Aud_CampaignDBDtl acdbd --//[mylock]
+								on ac.CampaignCode = acdbd.CampaignCode
+							left join Mst_Distributor md --//[mylock]
+								on acdbd.DBCode = md.DBCode
+							left join Aud_CampaignDBPOSMDtl acdbpd --//[mylock]
+								on ac.CampaignCode = acdbpd.CampaignCode
+						where (1=1)
+							zzB_Where_strFilter_zzE
+						order by ac.CampaignCode asc
+						;
+
+						---- Summary:
+						select Count(0) MyCount from #tbl_Aud_Campaign_Filter_Draft t --//[mylock]
+						;
+
+						---- #tbl_Aud_Campaign_Filter:
+						select
+							t.*
+						into #tbl_Aud_Campaign_Filter
+						from #tbl_Aud_Campaign_Filter_Draft t --//[mylock]
+						where
+							(t.MyIdxSeq >= @nFilterRecordStart)
+							and (t.MyIdxSeq <= @nFilterRecordEnd)
+						;
+
+						-------- Aud_Campaign --------:
+						zzB_Select_Aud_Campaign_zzE
+						----------------------------------------
+
+						-------- Aud_CampaignDBPOSMDtl --------:
+						zzB_Select_Aud_CampaignDBPOSMDtl_zzE
+						----------------------------------------
+
+						---- Clear for debug:
+						--drop table #tbl_Aud_Campaign_Filter_Draft;
+						--drop table #tbl_Aud_Campaign_Filter;
+					"
+					);
+				////
+				string zzB_Select_Aud_Campaign_zzE = "-- Nothing.";
+				if (bGet_Aud_Campaign)
+				{
+					#region // bGet_Aud_Campaign:
+					zzB_Select_Aud_Campaign_zzE = CmUtils.StringUtils.Replace(@"
+							---- Aud_Campaign:
+							select
+								t.MyIdxSeq
+								, ac.*
+							from #tbl_Aud_Campaign_Filter t --//[mylock]
+								inner join Aud_Campaign ac --//[mylock]
+									on t.CampaignCode = ac.CampaignCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
+				string zzB_Select_Aud_CampaignDBPOSMDtl_zzE = "-- Nothing.";
+				if (bGet_Aud_CampaignDBPOSMDtl)
+				{
+					#region // bGet_Aud_Campaign:
+					zzB_Select_Aud_CampaignDBPOSMDtl_zzE = CmUtils.StringUtils.Replace(@"
+							---- Aud_Campaign:
+							select distinct
+								t.MyIdxSeq
+								, md.AreaCode md_AreaCode  
+								, acdbd.DBCode acdbd_DBCode
+								, acdbpd.POSMCode acdbpd_POSMCode
+								, mp.POSMName mp_POSMName
+								, acdbpd.QtyDeliver acdbpd_QtyDeliver
+							from #tbl_Aud_Campaign_Filter t --//[mylock]
+								inner join Aud_Campaign ac --//[mylock]
+									on t.CampaignCode = ac.CampaignCode
+								left join Aud_CampaignDBDtl acdbd --//[mylock]
+									on ac.CampaignCode = acdbd.CampaignCode
+										and t.DBCode = acdbd.DBCode
+								inner join Mst_Distributor md --//[mylock]
+									on acdbd.DBCode = md.DBCode
+								left join Aud_CampaignDBPOSMDtl acdbpd --//[mylock]
+									on acdbd.CampaignCode = acdbpd.CampaignCode
+								left join Mst_POSM mp --//[mylock]
+									on acdbpd.POSMCode = mp.POSMCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
+				string zzB_Where_strFilter_zzE = "";
+				{
+					Hashtable htSpCols = new Hashtable();
+					{
+						#region // htSpCols:
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Aud_Campaign" // strTableNameDB
+							, "Aud_Campaign." // strPrefixStd
+							, "ac." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Aud_CampaignDBPOSMDtl" // strTableNameDB
+							, "Aud_CampaignDBPOSMDtl." // strPrefixStd
+							, "acdbpd." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Mst_Distributor" // strTableNameDB
+							, "Mst_Distributor." // strPrefixStd
+							, "md." // strPrefixAlias
+							);
+						////
+						#endregion
+					}
+					zzB_Where_strFilter_zzE = CmUtils.SqlUtils.BuildWhere(
+						htSpCols
+						, strFt_WhereClause // strClause
+						, "@p_" // strParamPrefix
+						, ref alParamsCoupleSql //alParamsCoupleSql
+						);
+					zzB_Where_strFilter_zzE = (zzB_Where_strFilter_zzE.Length < 0 ? "" : string.Format(" and ({0})", zzB_Where_strFilter_zzE));
+					alParamsCoupleError.AddRange(new object[]{
+						"zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
+						});
+				}
+				////
+				strSqlGetData = CmUtils.StringUtils.Replace(
+					strSqlGetData
+					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
+					, "zzB_Select_Aud_Campaign_zzE", zzB_Select_Aud_Campaign_zzE
+					, "zzB_Select_Aud_CampaignDBPOSMDtl_zzE", zzB_Select_Aud_CampaignDBPOSMDtl_zzE
+					);
+				#endregion
+
+				#region // Get Data:
+				DataSet dsGetData = _cf.db.ExecQuery(
+					strSqlGetData
+					, alParamsCoupleSql.ToArray()
+					);
+				int nIdxTable = 0;
+				dsGetData.Tables[nIdxTable++].TableName = "MySummaryTable";
+				if (bGet_Aud_Campaign)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Aud_Campaign";
+				}
+				if (bGet_Aud_CampaignDBPOSMDtl)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Aud_CampaignDBPOSMDtl";
+				}
+				CmUtils.DataUtils.MoveDataTable(ref mdsFinal, ref dsGetData);
+				#endregion
+
+				// Return Good:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db); // Always Rollback.
+				mdsFinal.AcceptChanges();
+				return mdsFinal;
+			}
+			catch (Exception exc)
+			{
+				#region // Catch of try:
+				// RollBack:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db);
+
+				// Return Bad:
+				return TUtils.CProcessExc.Process(
+					ref mdsFinal
+					, exc
+					, strErrorCodeDefault
+					, alParamsCoupleError.ToArray()
+					);
+				#endregion
+			}
+			finally
+			{
+				#region // Finnaly of try:
+				// Rollback and release resources:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db);
+				TDALUtils.DBUtils.ReleaseAllSemaphore(_cf.db_Sys, true);
+
+				// Write ReturnLog:
+				_cf.ProcessBizReturn(
+					ref mdsFinal // mdsFinal
+					, strTid // strTid
+					, strFunctionName // strFunctionName
+					);
+				#endregion
+			}
+
+		}
 		public DataSet Aud_Campaign_Save(
 			string strTid
 			, DataRow drSession

@@ -976,7 +976,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_CampainCriteria_Get:
-			if (!bTest)
+			if (bTest)
 			{
 				string strFt_WhereClause = "Mst_CampainCriteria.CampaignCrCode = '20140623.153829' and Mst_CampainCriteria.CampainCriteriaType = 'POSM' and Mst_CampainCriteria.CreateDTime <= '2024-05-15 23:59:59' and Mst_CampainCriteria.CreateDTime >= '2024-05-15 00:00:00'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteria_Get(
@@ -1008,6 +1008,79 @@ namespace ZTest01
 			}
 			#endregion
 
+			#region // Mst_CampainCriteriaScope_Get:
+			if (bTest)
+			{
+
+
+				/*string strFt_WhereClause = "Mst_CampainCriteriaScope.CampaignCrCode = '20140623.153829' and Mst_CampainCriteriaScope.SSGrpCode = '1' and Mst_CampainCriteriaScope.SSBrandCode = '1' and Mst_CampainCriteriaScope.LevelCode = '11'";*/
+				string strFt_WhereClause = "Mst_CampainCriteriaScope.LevelCode = '11'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteriaScope_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // st
+										 // rFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Mst_CampainCriteriaScope
+					, "*" // strRt_Cols_Mst_CampainExhibitedPOSM
+					, "*" // strRt_Cols_Mst_CampainCriteriaAward
+					, "*" // strRt_Cols_Mst_CampainCriteriaAwardDtl
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
+			#region // Aud_Campaign_Get:
+			if (!bTest)
+			{
+
+
+				/*string strFt_WhereClause = "Aud_Campaign.CampaignCode = 'AC20220912.888888' and Mst_Distributor.DBCode = 'DBVN001' and Aud_Campaign.EffDTimeStart <= '2014-06-25 23:59:59' and Aud_Campaign.EffDTimeStart >= '2014-06-25 00:00:00' and Mst_Distributor.AreaCode = 'VN001' and Aud_Campaign.CampaignStatus = 'CANCEL'";*/
+				string strFt_WhereClause = "Aud_Campaign.CampaignCode = 'AC20220912.888888' and Aud_Campaign.EffDTimeStart <= '2014-06-25 23:59:59' and Aud_Campaign.EffDTimeStart >= '2014-06-25 00:00:00' and Aud_Campaign.CampaignStatus = 'CANCEL'";
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Aud_Campaign_Get(
+					strGwUserCode // strGwUserCode	
+					, strGwPassword // strGwPassword	
+					, string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++) // strTid	
+					, strSessionId // strSessionId	
+								   ////	
+					, strFt_RecordStart  // strFt_RecordStart	
+					, strFt_RecordCount  // st
+										 // rFt_RecordCount	
+					, strFt_WhereClause  // strFt_WhereClause	
+										 ////	
+					, "*" // strRt_Cols_Aud_Campaign
+					, "*" // strRt_Cols_Aud_CampaignDBPOSMDtl
+					));
+
+				dtTable0 = mdsResult.Tables[0];
+				dtTable1 = mdsResult.Tables[1];
+				dtTable2 = mdsResult.Tables[2];
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:		
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
 
 
 			////

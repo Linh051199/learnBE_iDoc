@@ -108,6 +108,360 @@ namespace Demo.Lab.Biz
 					);
 			}
 		}
+		public DataSet Mst_CampainCriteriaScope_Get(
+			string strTid
+			, DataRow drSession
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return: 
+			, string strRt_Cols_Mst_CampainCriteriaScope
+			, string strRt_Cols_Mst_CampainExhibitedPOSM
+			, string strRt_Cols_Mst_CampainCriteriaAward
+			, string strRt_Cols_Mst_CampainCriteriaAwardDtl
+			)
+		{
+			#region // Temp:
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			//init nTidSeq = 0;
+			DateTime dtimeSys = DateTime.Now;
+			string strFunctionName = "Mst_CampainCriteria_Get";
+			string strErrorCodeDefault = TError.ErrDemoLab.Mst_CampainCriteria_Get;
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+					"strFunctionName", strFunctionName
+					, "dtimeSys", dtimeSys.ToString("yyyy-MM-dd HH:mm:ss")
+			//// Filter
+					, "strFt_RecordStart", strFt_RecordStart
+					, "strFt_RecordCount", strFt_RecordCount
+					, "strFt_WhereClause", strFt_WhereClause
+			//// Return
+					, "strRt_Cols_Mst_CampainCriteriaScope", strRt_Cols_Mst_CampainCriteriaScope
+					, "strRt_Cols_Mst_CampainExhibitedPOSM", strRt_Cols_Mst_CampainExhibitedPOSM
+					, "strRt_Cols_Mst_CampainCriteriaAward", strRt_Cols_Mst_CampainCriteriaAward
+					, "strRt_Cols_Mst_CampainCriteriaAwardDtl", strRt_Cols_Mst_CampainCriteriaAwardDtl
+					});
+			#endregion
+
+			try
+			{
+				#region // Init:
+				_cf.db.LogUserId = _cf.sinf.strUserCode;
+				_cf.db.BeginTransaction();
+
+				// Write RequestLog:
+				_cf.ProcessBizReq(
+					strTid //strTid
+					, strFunctionName //strFunctionName
+					, alParamsCoupleError
+					);
+
+				// Check Access/Deny:
+				Sys_Access_CheckDeny(
+					ref alParamsCoupleError
+					, strFunctionName
+					);
+				#endregion
+
+				#region // Check:
+				//// Refine:
+				long nFilterRecordStart = Convert.ToInt64(strFt_RecordStart);
+				long nFilterRecordEnd = nFilterRecordStart + Convert.ToInt64(strFt_RecordCount) - 1;
+				bool bGet_Mst_CampainCriteriaScope = (strRt_Cols_Mst_CampainCriteriaScope != null && strRt_Cols_Mst_CampainCriteriaScope.Length > 0);
+				bool bGet_Mst_CampainExhibitedPOSM = (strRt_Cols_Mst_CampainExhibitedPOSM != null && strRt_Cols_Mst_CampainExhibitedPOSM.Length > 0);
+				bool bGet_Mst_CampainCriteriaAward = (strRt_Cols_Mst_CampainCriteriaAward != null && strRt_Cols_Mst_CampainCriteriaAward.Length > 0);
+				bool bGet_Mst_CampainCriteriaAwardDtl = (strRt_Cols_Mst_CampainCriteriaAwardDtl != null && strRt_Cols_Mst_CampainCriteriaAwardDtl.Length > 0);
+
+				//// drAbitiltyOfUser
+				//DataRow drAbilityOfUser = myCache_ViewAbility_GetUserInfo(_cf.sinf.strUserCode);
+
+				#endregion
+
+				#region // Build Sql:
+				////
+				ArrayList alParamsCoupleSql = new ArrayList();
+				alParamsCoupleSql.AddRange(new object[]{
+					"@nFilterRecordStart", nFilterRecordStart
+					, "@nFilterRecordEnd", nFilterRecordEnd
+					});
+				////
+				//myCache_ViewAbility_GetDealerInfo(drAbitiltyOfUser)
+				////
+				string strSqlGetData = CmUtils.StringUtils.Replace(@"
+						---- #tbl_Mst_CampainCriteriaScope_Filter_Draft:
+						select distinct
+							identity(bigint, 0, 1) MyIdxSeq
+							, mccs.CampaignCrCode
+							, mccs.SSGrpCode
+							, mccs.SSBrandCode
+							, mccs.LevelCode
+						into #tbl_Mst_CampainCriteriaScope_Filter_Draft
+						from Mst_CampainCriteriaScope mccs --//[mylock]
+								left join Mst_CampainExhibitedPOSM mcep --//[mylock]
+									on mccs.CampaignCrCode = mcep.CampaignCrCode
+										and mccs.SSGrpCode = mcep.SSGrpCode
+										and mccs.SSBrandCode = mcep.SSBrandCode
+										and mccs.LevelCode = mcep.LevelCode
+								left join Mst_CampainCriteriaAward mcca --//[mylock]
+									on mccs.CampaignCrCode = mcca.CampaignCrCode
+										and mccs.SSGrpCode = mcca.SSGrpCode
+										and mccs.SSBrandCode = mcca.SSBrandCode
+										and mccs.LevelCode = mcca.LevelCode
+						where (1=1)
+							zzB_Where_strFilter_zzE
+						order by mccs.CampaignCrCode asc
+						;
+
+						---- Summary:
+						select Count(0) MyCount from #tbl_Mst_CampainCriteriaScope_Filter_Draft t --//[mylock]
+						;
+
+						---- #tbl_Mst_CampainCriteriaScope_Filter:
+						select
+							t.*
+						into #tbl_Mst_CampainCriteriaScope_Filter
+						from #tbl_Mst_CampainCriteriaScope_Filter_Draft t --//[mylock]
+						where
+							(t.MyIdxSeq >= @nFilterRecordStart)
+							and (t.MyIdxSeq <= @nFilterRecordEnd)
+						;
+
+						-------- Mst_CampainCriteriaScope --------:
+						zzB_Select_Mst_CampainCriteriaScope_zzE
+						----------------------------------------
+						
+						-------- Mst_CampainExhibitedPOSM ------
+						zzB_Select_Mst_CampainExhibitedPOSM_zzE
+						----------------------------------------
+						
+						-------- Mst_CampainCriteriaAward ------
+						zzB_Select_Mst_CampainCriteriaAward_zzE
+						----------------------------------------
+						
+						-------- Mst_CampainCriteriaAwardDtl ------
+						zzB_Select_Mst_CampainCriteriaAwardDtl_zzE
+						----------------------------------------
+
+						---- Clear for debug:
+						--drop table #tbl_Mst_CampainCriteriaScope_Filter_Draft;
+						--drop table #tbl_Mst_CampainCriteriaScope_Filter;
+					"
+					);
+				////
+				string zzB_Select_Mst_CampainCriteriaScope_zzE = "-- Nothing.";
+				if (bGet_Mst_CampainCriteriaScope)
+				{
+					#region // bGet_Mst_CampainCriteria:
+					zzB_Select_Mst_CampainCriteriaScope_zzE = CmUtils.StringUtils.Replace(@"
+							---- Mst_CampainCriteriaScope:
+							select
+								t.MyIdxSeq
+								, mccs.*
+							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
+								inner join Mst_CampainCriteriaScope mccs --//[mylock]
+									on t.CampaignCrCode = mccs.CampaignCrCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
+				string zzB_Select_Mst_CampainExhibitedPOSM_zzE = "-- Nothing.";
+				if (bGet_Mst_CampainExhibitedPOSM)
+				{
+					#region // bGet_Mst_CampainExhibitedPOSM:
+					zzB_Select_Mst_CampainExhibitedPOSM_zzE = CmUtils.StringUtils.Replace(@"
+							---- Mst_CampainCriteriaScope:
+							select
+								t.MyIdxSeq
+								, mcep.POSMCode mcep_POSMCode
+								, mposm.POSMName mposm_POSMName
+								, mcep.QtyExh mcep_QtyExh
+							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
+								inner join Mst_CampainExhibitedPOSM mcep --//[mylock]
+									on t.CampaignCrCode = mcep.CampaignCrCode
+								left join Mst_POSM mposm --//[mylock]
+									on mcep.POSMCode = mposm.POSMCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
+				string zzB_Select_Mst_CampainCriteriaAward_zzE = "-- Nothing.";
+				if (bGet_Mst_CampainCriteriaAward)
+				{
+					#region // bGet_Mst_CampainCriteriaAward:
+					zzB_Select_Mst_CampainCriteriaAward_zzE = CmUtils.StringUtils.Replace(@"
+							---- Mst_CampainCriteriaScope:
+							select
+								t.MyIdxSeq
+								, mcca.ValExhAward mcca_ValExhAward
+							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
+								inner join Mst_CampainCriteriaAward mcca --//[mylock]
+									on t.CampaignCrCode = mcca.CampaignCrCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
+				string zzB_Select_Mst_CampainCriteriaAwardDtl_zzE = "-- Nothing.";
+				if (bGet_Mst_CampainCriteriaAwardDtl)
+				{
+					#region // bGet_Mst_CampainCriteriaAwardDtl:
+					zzB_Select_Mst_CampainCriteriaAwardDtl_zzE = CmUtils.StringUtils.Replace(@"
+							---- Mst_CampainCriteriaScope:
+							select
+								t.MyIdxSeq
+								, mccad.POSMCode mccad_POSMCode 
+								, mposm.POSMName mposm_POSMName
+								, mccad.QtyAward mccad_QtyAward
+								, mposm.POSMUnitType mposm_POSMUnitType
+							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
+								inner join Mst_CampainCriteriaScope mccs --//[mylock]
+									on t.CampaignCrCode = mccs.CampaignCrCode
+								inner join Mst_CampainCriteriaAward mcca --//[mylock]
+									on t.CampaignCrCode = mcca.CampaignCrCode
+								left join Mst_CampainCriteriaAwardDtl mccad --//[mylock]
+									on mcca.CampaignCrAwardCode = mccad.CampaignCrAwardCode
+								left join Mst_POSM mposm --//[mylock]
+									on mcep.POSMCode = mposm.POSMCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
+				string zzB_Where_strFilter_zzE = "";
+				{
+					Hashtable htSpCols = new Hashtable();
+					{
+						#region // htSpCols:
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Mst_CampainCriteriaScope" // strTableNameDB
+							, "Mst_CampainCriteriaScope." // strPrefixStd
+							, "mccs." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Mst_CampainExhibitedPOSM" // strTableNameDB
+							, "Mst_CampainExhibitedPOSM." // strPrefixStd
+							, "mcep." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Mst_CampainCriteriaAward" // strTableNameDB
+							, "Mst_CampainCriteriaAward." // strPrefixStd
+							, "mcca." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
+							, "Mst_CampainCriteriaAwardDtl" // strTableNameDB
+							, "Mst_CampainCriteriaAwardDtl." // strPrefixStd
+							, "mccad." // strPrefixAlias
+							);
+						////
+						#endregion
+					}
+					zzB_Where_strFilter_zzE = CmUtils.SqlUtils.BuildWhere(
+						htSpCols
+						, strFt_WhereClause // strClause
+						, "@p_" // strParamPrefix
+						, ref alParamsCoupleSql //alParamsCoupleSql
+						);
+					zzB_Where_strFilter_zzE = (zzB_Where_strFilter_zzE.Length < 0 ? "" : string.Format(" and ({0})", zzB_Where_strFilter_zzE));
+					alParamsCoupleError.AddRange(new object[]{
+						"zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
+						});
+				}
+				////
+				strSqlGetData = CmUtils.StringUtils.Replace(
+					strSqlGetData
+					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
+					, "zzB_Select_Mst_CampainCriteriaScope_zzE", zzB_Select_Mst_CampainCriteriaScope_zzE
+					, "zzB_Select_Mst_CampainExhibitedPOSM_zzE", zzB_Select_Mst_CampainExhibitedPOSM_zzE
+					, "zzB_Select_Mst_CampainCriteriaAward_zzE", zzB_Select_Mst_CampainCriteriaAward_zzE
+					, "zzB_Select_Mst_CampainCriteriaAwardDtl_zzE", zzB_Select_Mst_CampainCriteriaAwardDtl_zzE
+					);
+				#endregion
+
+				#region // Get Data:
+				DataSet dsGetData = _cf.db.ExecQuery(
+					strSqlGetData
+					, alParamsCoupleSql.ToArray()
+					);
+				int nIdxTable = 0;
+				dsGetData.Tables[nIdxTable++].TableName = "MySummaryTable";
+				if (bGet_Mst_CampainCriteriaScope)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Mst_CampainCriteriaScope";
+				}
+				if (bGet_Mst_CampainExhibitedPOSM)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Mst_CampainExhibitedPOSM";
+				}
+				if (bGet_Mst_CampainCriteriaAward)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Mst_CampainCriteriaAward";
+				}
+				if (bGet_Mst_CampainCriteriaAwardDtl)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Mst_CampainCriteriaAwardDtl";
+				}
+				CmUtils.DataUtils.MoveDataTable(ref mdsFinal, ref dsGetData);
+				#endregion
+
+				// Return Good:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db); // Always Rollback.
+				mdsFinal.AcceptChanges();
+				return mdsFinal;
+			}
+			catch (Exception exc)
+			{
+				#region // Catch of try:
+				// RollBack:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db);
+
+				// Return Bad:
+				return TUtils.CProcessExc.Process(
+					ref mdsFinal
+					, exc
+					, strErrorCodeDefault
+					, alParamsCoupleError.ToArray()
+					);
+				#endregion
+			}
+			finally
+			{
+				#region // Finnaly of try:
+				// Rollback and release resources:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db);
+				TDALUtils.DBUtils.ReleaseAllSemaphore(_cf.db_Sys, true);
+
+				// Write ReturnLog:
+				_cf.ProcessBizReturn(
+					ref mdsFinal // mdsFinal
+					, strTid // strTid
+					, strFunctionName // strFunctionName
+					);
+				#endregion
+			}
+
+		}
 
 		#endregion
 
@@ -203,7 +557,7 @@ namespace Demo.Lab.Biz
 					, "strFt_RecordCount", strFt_RecordCount
 					, "strFt_WhereClause", strFt_WhereClause
 			//// Return
-					, "strRt_Cols_Mst_CampainCriteria", strRt_Cols_Mst_CampainCriteria                  
+					, "strRt_Cols_Mst_CampainCriteria", strRt_Cols_Mst_CampainCriteria
 					, "strRt_Cols_Mst_CampainCriteriaScope", strRt_Cols_Mst_CampainCriteriaScope
 					});
 			#endregion
@@ -300,7 +654,9 @@ namespace Demo.Lab.Biz
 							---- Mst_CampainCriteria:
 							select
 								t.MyIdxSeq
-								, mcc.*
+								, mcc.CampaignCrCode
+								, mcc.CampaignCrName
+								, mcc.CreateDTime
 							from #tbl_Mst_CampainCriteria_Filter t --//[mylock]
 								inner join Mst_CampainCriteria mcc --//[mylock]
 									on t.CampaignCrCode = mcc.CampaignCrCode
@@ -319,7 +675,6 @@ namespace Demo.Lab.Biz
 							---- Mst_CampainCriteria:
 							select
 								t.MyIdxSeq
-								, mccs.*
 								, mccs.LevelCode mccs_LevelCode
 								, mccs.CampainCritScopeDesc mccs_CampainCritScopeDesc
 								, msst.SSTypeName msst_SSTypeName
@@ -497,10 +852,10 @@ namespace Demo.Lab.Biz
 				string strFt_Cols_Upd = TUtils.CUtils.StdParam(objFt_Cols_Upd);
 				strFt_Cols_Upd = (strFt_Cols_Upd == null ? "" : strFt_Cols_Upd);
 				////
-				string strCampaignCrCode = TUtils.CUtils.StdParam(objCampaignCrCode); 
-				string strCampaignCrName = TUtils.CUtils.StdParam(objCampaignCrName); 
-				string strCampainCriteriaType = TUtils.CUtils.StdParam(objCampainCriteriaType); 
-				string strCreateDTime = TUtils.CUtils.StdParam(objCreateDTime); 
+				string strCampaignCrCode = TUtils.CUtils.StdParam(objCampaignCrCode);
+				string strCampaignCrName = TUtils.CUtils.StdParam(objCampaignCrName);
+				string strCampainCriteriaType = TUtils.CUtils.StdParam(objCampainCriteriaType);
+				string strCreateDTime = TUtils.CUtils.StdParam(objCreateDTime);
 				string strCreateBy = TUtils.CUtils.StdParam(objCreateBy);
 				string strFlagActive = TUtils.CUtils.StdFlag(objFlagActive);
 				////
@@ -747,7 +1102,7 @@ namespace Demo.Lab.Biz
 			////
 			, object objCampaignCrCode
 			, object objCampaignCrName
-			, object objCampainCriteriaType 
+			, object objCampainCriteriaType
 			, object[] arrobjDSData
 			)
 		{
@@ -805,9 +1160,9 @@ namespace Demo.Lab.Biz
 				////
 				bool bIsDelete = CmUtils.StringUtils.StringEqual(objFlagIsDelete, TConst.Flag.Yes);
 				////
-				string strCampaignCrCode = TUtils.CUtils.StdParam(objCampaignCrCode); 
+				string strCampaignCrCode = TUtils.CUtils.StdParam(objCampaignCrCode);
 				string strCampaignCrName = string.Format("{0}", objCampaignCrName).Trim();
-				string strCampainCriteriaType = string.Format("{0}", objCampainCriteriaType).Trim().ToUpper(); 
+				string strCampainCriteriaType = string.Format("{0}", objCampainCriteriaType).Trim().ToUpper();
 				string strCreateDTime = null;
 				string strCreateBy = null;
 
@@ -910,7 +1265,7 @@ namespace Demo.Lab.Biz
 								TConst.Flag.Active, // FlagActive
 								dtimeSys.ToString("yyyy-MM-dd HH:mm:ss"), // LogLUDTime
 								_cf.sinf.strUserCode, // LogLUBy
-								}	
+								}
 							}
 						);
 				}
@@ -1118,10 +1473,10 @@ namespace Demo.Lab.Biz
 					}
 					DataSet dsExec = _cf.db.ExecQuery(strSqlExec);
 				}
-				#endregion
+			#endregion
 
-				// Return Good:
-				MyCodeLabel_Done:
+			// Return Good:
+			MyCodeLabel_Done:
 				TDALUtils.DBUtils.CommitSafety(_cf.db);
 				mdsFinal.AcceptChanges();
 				return mdsFinal;
@@ -1131,7 +1486,7 @@ namespace Demo.Lab.Biz
 				#region // Catch of try:
 				// Rollback:
 				TDALUtils.DBUtils.RollbackSafety(_cf.db);
-				
+
 				// Return Bad:
 				//alParamsCoupleError.AddRange(alPCErrEx);
 				return TUtils.CProcessExc.Process(
@@ -1148,7 +1503,7 @@ namespace Demo.Lab.Biz
 				// Rollback and Release resources:
 				TDALUtils.DBUtils.RollbackSafety(_cf.db);
 				TDALUtils.DBUtils.ReleaseAllSemaphore(_cf.db_Sys, true);
-				
+
 				// Write ReturnLog:
 				_cf.ProcessBizReturn(
 					ref mdsFinal // mdsFinal

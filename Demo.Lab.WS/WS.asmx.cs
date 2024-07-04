@@ -5042,6 +5042,81 @@ namespace Demo.Lab.WS
 		}
 		#endregion
 
+		#region // Mst_CampainCriteriaScope:
+		[WebMethod]
+		public object[] Mst_CampainCriteriaScope_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Mst_CampainCriteriaScope
+			, string strRt_Cols_Mst_CampainExhibitedPOSM
+			, string strRt_Cols_Mst_CampainCriteriaAward
+			, string strRt_Cols_Mst_CampainCriteriaAwardDtl
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_CampainCriteriaScope_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_CampainCriteriaScope_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Mst_CampainCriteriaScope
+			, strRt_Cols_Mst_CampainExhibitedPOSM
+			, strRt_Cols_Mst_CampainCriteriaAward
+			, strRt_Cols_Mst_CampainCriteriaAwardDtl
+			));
+		}
+		#endregion
+
 		#region // Aud_Campaign:
 		[WebMethod]
 		public object[] Aud_Campaign_Save(
@@ -5246,6 +5321,75 @@ namespace Demo.Lab.WS
 			////
 			, objCampaignCode
 			, objRemark
+			));
+		}
+
+		[WebMethod]
+		public object[] Aud_Campaign_Get(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			//// Filter:
+			, string strFt_RecordStart
+			, string strFt_RecordCount
+			, string strFt_WhereClause
+			//// Return:
+			, string strRt_Cols_Aud_Campaign
+			, string strRt_Cols_Aud_CampaignDBPOSMDtl
+			)
+		{
+			// Temp:
+			string strFunctionName = "Aud_Campaign_Get";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Aud_Campaign_Get(
+			strTid
+			, drSession
+			//// Filter:
+			, strFt_RecordStart
+			, strFt_RecordCount
+			, strFt_WhereClause
+			//// Return:
+			, strRt_Cols_Aud_Campaign
+			, strRt_Cols_Aud_CampaignDBPOSMDtl
 			));
 		}
 		#endregion
