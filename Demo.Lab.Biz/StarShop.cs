@@ -1680,7 +1680,7 @@ namespace Demo.Lab.Biz
 			, object objSSGrpCode
 			, object objSSBrandCode
 			, object objSSTypeName
-			, object objSSRate 
+			, object objSSRate
 			)
 		{
 			#region // Temp:
@@ -1938,11 +1938,11 @@ namespace Demo.Lab.Biz
 				string strFlagActive = TUtils.CUtils.StdFlag(objFlagActive);
 				////
 				bool bUpd_SSTypeName = strFt_Cols_Upd.Contains("Mst_StarShopType.SSTypeName".ToUpper());
-				bool bUpd_SSRate = strFt_Cols_Upd.Contains("Mst_StarShopType.SSRate".ToUpper()); 
+				bool bUpd_SSRate = strFt_Cols_Upd.Contains("Mst_StarShopType.SSRate".ToUpper());
 				bool bUpd_FlagActive = strFt_Cols_Upd.Contains("Mst_StarShopType.FlagActive".ToUpper());
 
 				////
-				DataTable dtDB_Mst_StarShopType = null; 
+				DataTable dtDB_Mst_StarShopType = null;
 				{
 					////
 					Mst_StarShopType_CheckDB(
@@ -1987,7 +1987,7 @@ namespace Demo.Lab.Biz
 					string strFN = "";
 					DataRow drDB = dtDB_Mst_StarShopType.Rows[0];
 					if (bUpd_SSTypeName) { strFN = "SSTypeName"; drDB[strFN] = strSSTypeName; alColumnEffective.Add(strFN); }
-					if (bUpd_SSRate) { strFN = "SSRate"; drDB[strFN] = strSSRate; alColumnEffective.Add(strFN); } 
+					if (bUpd_SSRate) { strFN = "SSRate"; drDB[strFN] = strSSRate; alColumnEffective.Add(strFN); }
 					if (bUpd_FlagActive) { strFN = "FlagActive"; drDB[strFN] = strFlagActive; alColumnEffective.Add(strFN); }
 					strFN = "LogLUDTime"; drDB[strFN] = dtimeSys.ToString("yyyy-MM-dd HH:mm:ss"); alColumnEffective.Add(strFN);
 					strFN = "LogLUBy"; drDB[strFN] = _cf.sinf.strUserCode; alColumnEffective.Add(strFN);

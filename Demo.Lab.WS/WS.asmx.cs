@@ -4779,10 +4779,10 @@ namespace Demo.Lab.WS
 			, string strTid
 			, string strSessionId
 			////
+			, object objOLCode
 			, object objSSGrpCode
 			, object objSSBrandCode
-			, object objSSTypeName
-			, object objSSRate
+			, object objEffDateStart
 			)
 		{
 			// Temp:
@@ -4830,10 +4830,10 @@ namespace Demo.Lab.WS
 			strTid
 			, drSession
 			//// 
+			, objOLCode
 			, objSSGrpCode
 			, objSSBrandCode
-			, objSSTypeName
-			, objSSRate
+			, objEffDateStart
 			));
 		}
 		#endregion

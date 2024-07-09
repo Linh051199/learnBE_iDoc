@@ -20,3 +20,9 @@ D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants
 D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
 D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.dll
 D:\BE\Learn\lesson4\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.pdb
+D:\iDocNet\BackEnd\Learn\learnBE_iDoc\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.dll
+D:\iDocNet\BackEnd\Learn\learnBE_iDoc\Demo.Lab.Constants\bin\Debug\Demo.Lab.Constants.pdb
+D:\iDocNet\BackEnd\Learn\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.AssemblyReference.cache
+D:\iDocNet\BackEnd\Learn\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.csproj.CoreCompileInputs.cache
+D:\iDocNet\BackEnd\Learn\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.dll
+D:\iDocNet\BackEnd\Learn\learnBE_iDoc\Demo.Lab.Constants\obj\Debug\Demo.Lab.Constants.pdb

@@ -339,6 +339,39 @@ namespace ZTest01
 			}
 			#endregion
 
+			#region // Mst_StarShopType_Create:
+			if (!bTest)
+			{
+				string strTid = string.Format("{0}.{1}", DateTime.Now.ToString("yyyyMMdd.HHmmss"), nSeq++);
+				//// 
+				string strOLCode = "OLVN001.10";
+				string strSSGrpCode = "1";
+				string strSSBrandCode = "1";
+				string strEffDateStart = "2024-07-09";
+
+				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_StarShopHist_Create(
+					strGwUserCode           // strGwUserCode
+					, strGwPassword         // strGwPassword
+					, strTid                // strTid
+					, strSessionId          // strSessionId
+											////
+					, strOLCode				// objOLCode
+					, strSSGrpCode			// objSSGrpCode
+					, strSSBrandCode        // objSSBrandCode
+					, strEffDateStart       // objEffDateStart
+					));
+
+				if (CmUtils.CMyDataSet.HasError(mdsResult))
+				{
+					CommonForms.Utils.ProcessMyDS(mdsResult);
+				}
+
+				// Pause:
+				System.Threading.Thread.Sleep(10);
+			}
+			#endregion
+
+
 			#region // Mst_CampainCriteria_Save: 
 			if (bTest)
 			{
@@ -976,7 +1009,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_CampainCriteria_Get:
-			if (!bTest)
+			if (bTest)
 			{
 				string strFt_WhereClause = "Mst_CampainCriteria.CampaignCrCode = '20140623.153829' and Mst_CampainCriteria.CampainCriteriaType = 'POSM' and Mst_CampainCriteria.CreateDTime <= '2024-05-15 23:59:59' and Mst_CampainCriteria.CreateDTime >= '2024-05-15 00:00:00'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteria_Get(
@@ -1009,7 +1042,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_CampainCriteriaScope_Get:
-			if (!bTest)
+			if (bTest)
 			{
 
 
@@ -1046,7 +1079,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Aud_Campaign_Get:
-			if (!bTest)
+			if (bTest)
 			{
 
 
