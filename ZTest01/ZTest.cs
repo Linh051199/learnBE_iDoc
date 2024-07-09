@@ -976,7 +976,7 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_CampainCriteria_Get:
-			if (bTest)
+			if (!bTest)
 			{
 				string strFt_WhereClause = "Mst_CampainCriteria.CampaignCrCode = '20140623.153829' and Mst_CampainCriteria.CampainCriteriaType = 'POSM' and Mst_CampainCriteria.CreateDTime <= '2024-05-15 23:59:59' and Mst_CampainCriteria.CreateDTime >= '2024-05-15 00:00:00'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteria_Get(
@@ -1009,12 +1009,11 @@ namespace ZTest01
 			#endregion
 
 			#region // Mst_CampainCriteriaScope_Get:
-			if (bTest)
+			if (!bTest)
 			{
 
 
-				/*string strFt_WhereClause = "Mst_CampainCriteriaScope.CampaignCrCode = '20140623.153829' and Mst_CampainCriteriaScope.SSGrpCode = '1' and Mst_CampainCriteriaScope.SSBrandCode = '1' and Mst_CampainCriteriaScope.LevelCode = '11'";*/
-				string strFt_WhereClause = "Mst_CampainCriteriaScope.LevelCode = '11'";
+				string strFt_WhereClause = "Mst_CampainCriteriaScope.CampaignCrCode = '20140623.153829' and Mst_CampainCriteriaScope.SSGrpCode = '1' and Mst_CampainCriteriaScope.SSBrandCode = '1' and Mst_CampainCriteriaScope.LevelCode = '11'";
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Mst_CampainCriteriaScope_Get(
 					strGwUserCode // strGwUserCode	
 					, strGwPassword // strGwPassword	
@@ -1051,8 +1050,8 @@ namespace ZTest01
 			{
 
 
-				/*string strFt_WhereClause = "Aud_Campaign.CampaignCode = 'AC20220912.888888' and Mst_Distributor.DBCode = 'DBVN001' and Aud_Campaign.EffDTimeStart <= '2014-06-25 23:59:59' and Aud_Campaign.EffDTimeStart >= '2014-06-25 00:00:00' and Mst_Distributor.AreaCode = 'VN001' and Aud_Campaign.CampaignStatus = 'CANCEL'";*/
-				string strFt_WhereClause = "Aud_Campaign.CampaignCode = 'AC20220912.888888' and Aud_Campaign.EffDTimeStart <= '2014-06-25 23:59:59' and Aud_Campaign.EffDTimeStart >= '2014-06-25 00:00:00' and Aud_Campaign.CampaignStatus = 'CANCEL'";
+				string strFt_WhereClause = "Aud_Campaign.CampaignCode = 'AC20220912.888888' and Mst_Distributor.DBCode = 'DBVN001' and Aud_Campaign.EffDTimeStart <= '2014-06-25 23:59:59' and Aud_Campaign.EffDTimeStart >= '2014-06-25 00:00:00' and Mst_Distributor.AreaCode = 'VN001' and Aud_Campaign.CampaignStatus = 'CANCEL'";
+
 				mdsResult = CmUtils.ConvertUtils.Array2DataSet(ws.Aud_Campaign_Get(
 					strGwUserCode // strGwUserCode	
 					, strGwPassword // strGwPassword	
@@ -1065,6 +1064,7 @@ namespace ZTest01
 					, strFt_WhereClause  // strFt_WhereClause	
 										 ////	
 					, "*" // strRt_Cols_Aud_Campaign
+					, "*" // strRt_Cols_Aud_CampaignDoc
 					, "*" // strRt_Cols_Aud_CampaignDBPOSMDtl
 					));
 

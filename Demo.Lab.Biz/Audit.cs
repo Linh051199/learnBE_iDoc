@@ -97,6 +97,7 @@ namespace Demo.Lab.Biz
 			, string strFt_WhereClause
 			//// Return: 
 			, string strRt_Cols_Aud_Campaign
+			, string strRt_Cols_Aud_CampaignDoc
 			, string strRt_Cols_Aud_CampaignDBPOSMDtl
 			)
 		{
@@ -104,8 +105,8 @@ namespace Demo.Lab.Biz
 			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
 			//init nTidSeq = 0;
 			DateTime dtimeSys = DateTime.Now;
-			string strFunctionName = "Mst_CampainCriteria_Get";
-			string strErrorCodeDefault = TError.ErrDemoLab.Mst_CampainCriteria_Get;
+			string strFunctionName = "Aud_Campaign_Get";
+			string strErrorCodeDefault = TError.ErrDemoLab.Aud_Campaign_Get;
 			ArrayList alParamsCoupleError = new ArrayList(new object[]{
 					"strFunctionName", strFunctionName
 					, "dtimeSys", dtimeSys.ToString("yyyy-MM-dd HH:mm:ss")
@@ -115,6 +116,7 @@ namespace Demo.Lab.Biz
 					, "strFt_WhereClause", strFt_WhereClause
 			//// Return
 					, "strRt_Cols_Aud_Campaign", strRt_Cols_Aud_Campaign
+					, "strRt_Cols_Aud_CampaignDoc", strRt_Cols_Aud_CampaignDoc
 					, "strRt_Cols_Aud_CampaignDBPOSMDtl", strRt_Cols_Aud_CampaignDBPOSMDtl
 					});
 			#endregion
@@ -144,6 +146,7 @@ namespace Demo.Lab.Biz
 				long nFilterRecordStart = Convert.ToInt64(strFt_RecordStart);
 				long nFilterRecordEnd = nFilterRecordStart + Convert.ToInt64(strFt_RecordCount) - 1;
 				bool bGet_Aud_Campaign = (strRt_Cols_Aud_Campaign != null && strRt_Cols_Aud_Campaign.Length > 0);
+				bool bGet_Aud_CampaignDoc = (strRt_Cols_Aud_CampaignDoc != null && strRt_Cols_Aud_CampaignDoc.Length > 0);
 				bool bGet_Aud_CampaignDBPOSMDtl = (strRt_Cols_Aud_CampaignDBPOSMDtl != null && strRt_Cols_Aud_CampaignDBPOSMDtl.Length > 0);
 
 				//// drAbitiltyOfUser
@@ -166,8 +169,6 @@ namespace Demo.Lab.Biz
 						select distinct
 							identity(bigint, 0, 1) MyIdxSeq
 							, ac.CampaignCode
-							, acdbd.DBCode 
-							, md.AreaCode
 						into #tbl_Aud_Campaign_Filter_Draft
 						from Aud_Campaign ac --//[mylock]
 							left join Aud_CampaignDBDtl acdbd --//[mylock]
@@ -203,6 +204,10 @@ namespace Demo.Lab.Biz
 						zzB_Select_Aud_CampaignDBPOSMDtl_zzE
 						----------------------------------------
 
+						-------- Aud_CampaignDoc --------:
+						zzB_Select_Aud_CampaignDoc_zzE
+						----------------------------------------
+
 						---- Clear for debug:
 						--drop table #tbl_Aud_Campaign_Filter_Draft;
 						--drop table #tbl_Aud_Campaign_Filter;
@@ -228,29 +233,46 @@ namespace Demo.Lab.Biz
 					#endregion
 				}
 				////
+				string zzB_Select_Aud_CampaignDoc_zzE = "-- Nothing.";
+				if (bGet_Aud_CampaignDoc)
+				{
+					#region // bGet_Aud_CampaignDoc:
+					zzB_Select_Aud_CampaignDoc_zzE = CmUtils.StringUtils.Replace(@"
+							---- Aud_CampaignDoc:
+							select distinct
+								t.MyIdxSeq
+								, acd.*
+							from #tbl_Aud_Campaign_Filter t --//[mylock]
+								left join Aud_CampaignDoc acd --//[mylock]
+									on t.CampaignCode = acd.CampaignCode
+							order by t.MyIdxSeq asc
+							;
+						"
+						);
+					#endregion
+				}
+				////
 				string zzB_Select_Aud_CampaignDBPOSMDtl_zzE = "-- Nothing.";
 				if (bGet_Aud_CampaignDBPOSMDtl)
 				{
-					#region // bGet_Aud_Campaign:
+					#region // bGet_Aud_CampaignDBPOSMDtl:
 					zzB_Select_Aud_CampaignDBPOSMDtl_zzE = CmUtils.StringUtils.Replace(@"
-							---- Aud_Campaign:
+							---- Aud_CampaignDBPOSMDtl:
 							select distinct
 								t.MyIdxSeq
+								, acdbpd.*
 								, md.AreaCode md_AreaCode  
-								, acdbd.DBCode acdbd_DBCode
-								, acdbpd.POSMCode acdbpd_POSMCode
 								, mp.POSMName mp_POSMName
-								, acdbpd.QtyDeliver acdbpd_QtyDeliver
 							from #tbl_Aud_Campaign_Filter t --//[mylock]
 								inner join Aud_Campaign ac --//[mylock]
 									on t.CampaignCode = ac.CampaignCode
 								left join Aud_CampaignDBDtl acdbd --//[mylock]
 									on ac.CampaignCode = acdbd.CampaignCode
-										and t.DBCode = acdbd.DBCode
-								inner join Mst_Distributor md --//[mylock]
+								left join Mst_Distributor md --//[mylock]
 									on acdbd.DBCode = md.DBCode
 								left join Aud_CampaignDBPOSMDtl acdbpd --//[mylock]
 									on acdbd.CampaignCode = acdbpd.CampaignCode
+										and acdbd.DBCode = acdbpd.DBCode
 								left join Mst_POSM mp --//[mylock]
 									on acdbpd.POSMCode = mp.POSMCode
 							order by t.MyIdxSeq asc
@@ -285,6 +307,14 @@ namespace Demo.Lab.Biz
 						TUtils.CUtils.MyBuildHTSupportedColumns(
 							_cf.db // db
 							, ref htSpCols // htSupportedColumns
+							, "Aud_CampaignDoc" // strTableNameDB
+							, "Aud_CampaignDoc." // strPrefixStd
+							, "acd." // strPrefixAlias
+							);
+						////
+						TUtils.CUtils.MyBuildHTSupportedColumns(
+							_cf.db // db
+							, ref htSpCols // htSupportedColumns
 							, "Mst_Distributor" // strTableNameDB
 							, "Mst_Distributor." // strPrefixStd
 							, "md." // strPrefixAlias
@@ -308,6 +338,7 @@ namespace Demo.Lab.Biz
 					strSqlGetData
 					, "zzB_Where_strFilter_zzE", zzB_Where_strFilter_zzE
 					, "zzB_Select_Aud_Campaign_zzE", zzB_Select_Aud_Campaign_zzE
+					, "zzB_Select_Aud_CampaignDoc_zzE", zzB_Select_Aud_CampaignDoc_zzE
 					, "zzB_Select_Aud_CampaignDBPOSMDtl_zzE", zzB_Select_Aud_CampaignDBPOSMDtl_zzE
 					);
 				#endregion
@@ -326,6 +357,10 @@ namespace Demo.Lab.Biz
 				if (bGet_Aud_CampaignDBPOSMDtl)
 				{
 					dsGetData.Tables[nIdxTable++].TableName = "Aud_CampaignDBPOSMDtl";
+				}
+				if (bGet_Aud_CampaignDoc)
+				{
+					dsGetData.Tables[nIdxTable++].TableName = "Aud_CampaignDoc";
 				}
 				CmUtils.DataUtils.MoveDataTable(ref mdsFinal, ref dsGetData);
 				#endregion

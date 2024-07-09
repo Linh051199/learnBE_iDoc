@@ -2149,5 +2149,341 @@ namespace Demo.Lab.Biz
 			}
 		}
 		#endregion
+
+		#region // Mst_StarShopHist:
+		private void Mst_StarShopHist_CheckDB(
+			ref ArrayList alParamsCoupleError
+			, object objOLCode
+			, object objSSGrpCode
+			, object objSSBrandCode
+			, string strFlagExistToCheck
+			, out DataTable dtDB_Mst_StarShopHist
+			)
+		{
+			// GetInfo:
+			string strSqlExec = CmUtils.StringUtils.Replace(@"
+			select top 1
+				t.*
+			from Mst_StarShopHist t --//[mylock]
+			where (1=1)
+				and t.OLCode = @objOLCode
+				and t.SSGrpCode = @objSSGrpCode
+				and t.SSBrandCode = @objSSBrandCode
+			;
+		");
+			dtDB_Mst_StarShopHist = _cf.db.ExecQuery(
+				strSqlExec
+				, "@objOLCode", objOLCode
+				, "@objSSGrpCode", objSSGrpCode
+				, "@objSSBrandCode", objSSBrandCode
+				).Tables[0];
+			dtDB_Mst_StarShopHist.TableName = "Mst_StarShopHist";
+
+			// strFlagExistToCheck:
+			if (strFlagExistToCheck.Length > 0)
+			{
+				if (CmUtils.StringUtils.StringEqual(strFlagExistToCheck, TConst.Flag.Active) && dtDB_Mst_StarShopHist.Rows.Count < 1)
+				{
+					alParamsCoupleError.AddRange(new object[]{
+				"Check.OLCode", objOLCode
+				, "Check.SSGrpCode", objSSGrpCode
+				, "Check.SSBrandCode", objSSBrandCode
+				});
+					throw CmUtils.CMyException.Raise(
+						TError.ErrDemoLab.Mst_StarShopHist_CheckDB_StarShopHistNotFound
+						, null
+						, alParamsCoupleError.ToArray()
+						);
+				}
+				if (CmUtils.StringUtils.StringEqual(strFlagExistToCheck, TConst.Flag.Inactive) && dtDB_Mst_StarShopHist.Rows.Count > 0)
+				{
+					alParamsCoupleError.AddRange(new object[]{
+				"Check.OLCode", objOLCode
+				, "Check.SSGrpCode", objSSGrpCode
+				, "Check.SSBrandCode", objSSBrandCode
+				});
+					throw CmUtils.CMyException.Raise(
+						TError.ErrDemoLab.Mst_StarShopHist_CheckDB_StarShopHistExist
+						, null
+						, alParamsCoupleError.ToArray()
+						);
+				}
+			}
+		}
+		public DataSet Mst_StarShopHist_Create(
+			 string strTid
+			, DataRow drSession
+			////
+			, object objOLCode
+			, object objSSGrpCode
+			, object objSSBrandCode
+			, object objEffDateStart
+			)
+		{
+			#region // Temp:
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			//int nTidSeq = 0;
+			DateTime dtimeSys = DateTime.Now;
+			string strFunctionName = "Mst_StarShopHist_Create";
+			string strErrorCodeDefault = TError.ErrDemoLab.Mst_StarShopHist_Create;
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+			"strFunctionName", strFunctionName
+			, "dtimeSys", dtimeSys.ToString("yyyy-MM-dd HH:mm:ss")
+			////
+			, "objOLCode", objOLCode
+			, "objSSGrpCode", objSSGrpCode
+			, "objSSBrandCode", objSSBrandCode
+			, "objEffDateStart", objEffDateStart
+			});
+			#endregion
+
+			try
+			{
+				#region // Convert Input:
+				#endregion
+
+				#region // Init:
+				_cf.db.LogUserId = _cf.sinf.strUserCode;
+				_cf.db.BeginTransaction();
+
+				// Write RequestLog:
+				_cf.ProcessBizReq(
+					strTid // strTid
+					, strFunctionName // strFunctionName
+					, alParamsCoupleError // alParamsCoupleError
+					);
+
+				// Check Access/Deny:
+				Sys_Access_CheckDeny(
+					ref alParamsCoupleError
+					, strFunctionName
+					);
+				#endregion
+
+				#region // Refine and Check Input:
+				////
+				string strOLCode = TUtils.CUtils.StdParam(objOLCode);
+				string strSSGrpCode = TUtils.CUtils.StdParam(objSSGrpCode);
+				string strSSBrandCode = TUtils.CUtils.StdParam(objSSBrandCode);
+				string strEffDateStart = TUtils.CUtils.StdDate(objEffDateStart);
+				string strEffDateEnd = null;
+
+				////
+				DataTable dtDB_Mst_Outlet = null;
+				DataTable dtDB_Mst_StarShopGroup = null;
+				DataTable dtDB_Mst_StarShopBrand = null;
+				DataTable dtDB_Mst_StarShopType = null;
+				{
+					////
+					Mst_Outlet_CheckDB(
+						ref alParamsCoupleError // alParamsCoupleError
+						, strOLCode // objOLCode
+						, TConst.Flag.Yes // strFlagExistToCheck   
+						, TConst.Flag.Active // objOutletStatusListToCheck
+						, out dtDB_Mst_Outlet // dtDB_Mst_Outlet
+						);
+
+					////
+					Mst_StarShopGroup_CheckDB(
+						ref alParamsCoupleError // alParamsCoupleError
+						, strSSGrpCode // objSSGrpCode
+						, TConst.Flag.Yes // strFlagExistToCheck
+						, TConst.Flag.Active // strFlagActiveListToCheck
+						, out dtDB_Mst_StarShopGroup // dtDB_Mst_StarShopGroup
+						);
+
+					////
+					Mst_StarShopBrand_CheckDB(
+						ref alParamsCoupleError // alParamsCoupleError
+						, strSSBrandCode // objSSBrandCode
+						, TConst.Flag.Yes // strFlagExistToCheck
+						, TConst.Flag.Active // strFlagActiveListToCheck
+						, out dtDB_Mst_StarShopBrand // dtDB_Mst_StarShopBrand
+						);
+					////
+					Mst_StarShopType_CheckDB(
+					   ref alParamsCoupleError // alParamsCoupleError
+					   , strSSGrpCode // objSSGrpCode
+					   , strSSBrandCode // objSSBrandCode
+					   , TConst.Flag.Yes // strFlagExistToCheck
+					   , "" // strFlagActiveListToCheck
+					   , out dtDB_Mst_StarShopType // dtDB_Mst_StarShopType
+					   );
+					//// strEffDateStart not null
+					if (strEffDateStart == null || strEffDateStart.Length < 1)
+					{
+						alParamsCoupleError.AddRange(new object[]{
+					"Check.strEffDateStart", strEffDateStart
+					});
+						throw CmUtils.CMyException.Raise(
+							TError.ErrDemoLab.Mst_StarShopHist_Create_InvalidEffDateStart
+							, null
+							, alParamsCoupleError.ToArray()
+							);
+					}
+					////strEffDateStart < SysDate
+					if (strEffDateStart.CompareTo(dtimeSys.AddDays(1).ToString("yyyy-MM-dd")) < 0)
+					{
+						alParamsCoupleError.AddRange(new object[]{
+					"Check.strEffDateStart", strEffDateStart
+					, "Check.SysDate", DateTime.Today.ToString("yyyy-MM-dd")
+					});
+						throw CmUtils.CMyException.Raise(
+							TError.ErrDemoLab.Mst_StarShopHist_Create_InvalidEffDateStartAfterSysDate
+							, null
+							, alParamsCoupleError.ToArray()
+							);
+					}
+
+					//// Nếu tồn tại Same EffDateStart ==> Error
+					DataTable dt_Mst_StarShopHistCheck = TDALUtils.DBUtils.GetTableContents(
+						_cf.db //db
+						, "Mst_StarShopHist" // strTableName
+						, "top 1 *" // strColumnList
+						, "" // strClauseOrderBy
+						, "OLCode", "=", strOLCode // arrobjParamsTriple item
+						, "EffDateStart", "=", strEffDateStart // arrobjParamsTriple item
+						);
+					if (dt_Mst_StarShopHistCheck.Rows.Count > 0)
+					{
+						alParamsCoupleError.AddRange(new object[]{
+					"Check.strEffDateStart", strEffDateStart
+					, "Check.strOLCode", strOLCode
+					, "Check.strSSGrpCode", strSSGrpCode
+					, "Check.strSSBrandCode", strSSBrandCode
+					, "Check.ExistEffDateStart", dt_Mst_StarShopHistCheck.Rows[0]["EffDateStart"]
+					, "Check.ExistOLCode", dt_Mst_StarShopHistCheck.Rows[0]["OLCode"]
+					, "Check.ExistSSGrpCode", dt_Mst_StarShopHistCheck.Rows[0]["SSGrpCode"]
+					, "Check.ExistSSBrandCode", dt_Mst_StarShopHistCheck.Rows[0]["SSBrandCode"]
+					});
+						throw CmUtils.CMyException.Raise(
+							TError.ErrDemoLab.Mst_StarShopHist_Create_InvalidExistEffDateStart
+							, null
+							, alParamsCoupleError.ToArray()
+							);
+					}
+				}
+				#endregion
+
+				#region // Save Mst_StarShopHist Previous:
+				{
+					////
+					DataTable dtDB_Mst_StarShopHistPrevious = null;
+					dtDB_Mst_StarShopHistPrevious = TDALUtils.DBUtils.GetTableContents(
+						_cf.db // db
+						, "Mst_StarShopHist" // strTableName
+						, "top 1 *" // strColumnList
+						, "order by EffDateStart desc" // strClauseOrderBy
+						, "OLCode", "=", strOLCode // arrobjParamsTriple item
+						, "EffDateStart", "<", strEffDateStart // arrobjParamsTriple item
+						);
+					if (dtDB_Mst_StarShopHistPrevious.Rows.Count > 0)
+					{
+						DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+						dtfi.ShortDatePattern = "yyyy-MM-dd";
+						dtfi.DateSeparator = "-";
+						DateTime dateEffDateStart = Convert.ToDateTime(strEffDateStart, dtfi);
+						ArrayList alColumnEffective = new ArrayList();
+						dtDB_Mst_StarShopHistPrevious.Rows[0]["EffDateEnd"] = dateEffDateStart.AddDays(-1).ToString("yyyy-MM-dd"); alColumnEffective.Add("EffDateEnd");
+
+						// Save Mst_StarShopHist: 
+						_cf.db.SaveData(
+							"Mst_StarShopHist"
+							, dtDB_Mst_StarShopHistPrevious
+							, alColumnEffective.ToArray()
+							);
+					}
+				}
+				#endregion
+
+				#region // Set strEffDateEnd:
+				{
+					////
+					DataTable dtDB_Mst_StarShopHistNext = null;
+					dtDB_Mst_StarShopHistNext = TDALUtils.DBUtils.GetTableContents(
+						_cf.db // db
+						, "Mst_StarShopHist" // strTableName
+						, "top 1 *" // strColumnList
+						, "order by EffDateStart asc" // strClauseOrderBy
+						, "OLCode", "=", strOLCode // arrobjParamsTriple item
+						, "EffDateStart", ">", strEffDateStart // arrobjParamsTriple item
+						);
+					if (dtDB_Mst_StarShopHistNext.Rows.Count > 0)
+					{
+						DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+						dtfi.ShortDatePattern = "yyyy-MM-dd";
+						dtfi.DateSeparator = "-";
+						DateTime dateEffDateStart = Convert.ToDateTime(dtDB_Mst_StarShopHistNext.Rows[0]["EffDateStart"].ToString(), dtfi);
+						strEffDateEnd = dateEffDateStart.AddDays(-1).ToString("yyyy-MM-dd");
+					}
+					else
+					{
+						strEffDateEnd = TConst.DateTimeSpecial.DateMax;
+					}
+				}
+				#endregion
+
+				#region // SaveDB Mst_StarShopHist:
+				{
+					// Init:
+					//ArrayList alColumnEffective = new ArrayList();
+					string strFN = "";
+					DataTable dtDB_Mst_StarShopHist = TDALUtils.DBUtils.GetSchema(_cf.db, "Mst_StarShopHist").Tables[0];
+					DataRow drDB = dtDB_Mst_StarShopHist.NewRow();
+					strFN = "OLCode"; drDB[strFN] = strOLCode;
+					strFN = "SSGrpCode"; drDB[strFN] = strSSGrpCode;
+					strFN = "SSBrandCode"; drDB[strFN] = strSSBrandCode;
+					strFN = "EffDateStart"; drDB[strFN] = strEffDateStart;
+					strFN = "EffDateEnd"; drDB[strFN] = strEffDateEnd;
+					strFN = "LogLUDTime"; drDB[strFN] = dtimeSys.ToString("yyyy-MM-dd HH:mm:ss");
+					strFN = "LogLUBy"; drDB[strFN] = _cf.sinf.strUserCode;
+					dtDB_Mst_StarShopHist.Rows.Add(drDB);
+
+					// Save:
+					_cf.db.SaveData(
+						"Mst_StarShopHist"
+						, dtDB_Mst_StarShopHist
+						//, alColumnEffective.ToArray()
+						);
+				}
+				#endregion
+
+				// Return Good:
+				TDALUtils.DBUtils.CommitSafety(_cf.db);
+				mdsFinal.AcceptChanges();
+				return mdsFinal;
+			}
+			catch (Exception exc)
+			{
+				#region // Catch of try:
+				// Rollback:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db);
+
+				// Return Bad:
+				return TUtils.CProcessExc.Process(
+					ref mdsFinal
+					, exc
+					, strErrorCodeDefault
+					, alParamsCoupleError.ToArray()
+					);
+				#endregion
+			}
+			finally
+			{
+				#region // Finally of try:
+				// Rollback and Release resources:
+				TDALUtils.DBUtils.RollbackSafety(_cf.db);
+				TDALUtils.DBUtils.ReleaseAllSemaphore(_cf.db_Sys, true);
+
+				// Write ReturnLog:
+				_cf.ProcessBizReturn(
+					ref mdsFinal // mdsFinal
+					, strTid // strTid
+					, strFunctionName // strFunctionName
+					);
+				#endregion
+			}
+		}
+		#endregion
 	}
 }

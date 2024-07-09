@@ -126,7 +126,7 @@ namespace Demo.Lab.Biz
 			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
 			//init nTidSeq = 0;
 			DateTime dtimeSys = DateTime.Now;
-			string strFunctionName = "Mst_CampainCriteria_Get";
+			string strFunctionName = "Mst_CampainCriteriaScope_Get";
 			string strErrorCodeDefault = TError.ErrDemoLab.Mst_CampainCriteria_Get;
 			ArrayList alParamsCoupleError = new ArrayList(new object[]{
 					"strFunctionName", strFunctionName
@@ -192,21 +192,8 @@ namespace Demo.Lab.Biz
 						select distinct
 							identity(bigint, 0, 1) MyIdxSeq
 							, mccs.CampaignCrCode
-							, mccs.SSGrpCode
-							, mccs.SSBrandCode
-							, mccs.LevelCode
 						into #tbl_Mst_CampainCriteriaScope_Filter_Draft
 						from Mst_CampainCriteriaScope mccs --//[mylock]
-								left join Mst_CampainExhibitedPOSM mcep --//[mylock]
-									on mccs.CampaignCrCode = mcep.CampaignCrCode
-										and mccs.SSGrpCode = mcep.SSGrpCode
-										and mccs.SSBrandCode = mcep.SSBrandCode
-										and mccs.LevelCode = mcep.LevelCode
-								left join Mst_CampainCriteriaAward mcca --//[mylock]
-									on mccs.CampaignCrCode = mcca.CampaignCrCode
-										and mccs.SSGrpCode = mcca.SSGrpCode
-										and mccs.SSBrandCode = mcca.SSBrandCode
-										and mccs.LevelCode = mcca.LevelCode
 						where (1=1)
 							zzB_Where_strFilter_zzE
 						order by mccs.CampaignCrCode asc
@@ -251,7 +238,7 @@ namespace Demo.Lab.Biz
 				string zzB_Select_Mst_CampainCriteriaScope_zzE = "-- Nothing.";
 				if (bGet_Mst_CampainCriteriaScope)
 				{
-					#region // bGet_Mst_CampainCriteria:
+					#region // bGet_Mst_CampainCriteriaScope:
 					zzB_Select_Mst_CampainCriteriaScope_zzE = CmUtils.StringUtils.Replace(@"
 							---- Mst_CampainCriteriaScope:
 							select
@@ -272,12 +259,11 @@ namespace Demo.Lab.Biz
 				{
 					#region // bGet_Mst_CampainExhibitedPOSM:
 					zzB_Select_Mst_CampainExhibitedPOSM_zzE = CmUtils.StringUtils.Replace(@"
-							---- Mst_CampainCriteriaScope:
+							---- Mst_CampainExhibitedPOSM:
 							select
 								t.MyIdxSeq
-								, mcep.POSMCode mcep_POSMCode
+								, mcep.*
 								, mposm.POSMName mposm_POSMName
-								, mcep.QtyExh mcep_QtyExh
 							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
 								inner join Mst_CampainExhibitedPOSM mcep --//[mylock]
 									on t.CampaignCrCode = mcep.CampaignCrCode
@@ -295,10 +281,10 @@ namespace Demo.Lab.Biz
 				{
 					#region // bGet_Mst_CampainCriteriaAward:
 					zzB_Select_Mst_CampainCriteriaAward_zzE = CmUtils.StringUtils.Replace(@"
-							---- Mst_CampainCriteriaScope:
+							---- Mst_CampainCriteriaAward:
 							select
 								t.MyIdxSeq
-								, mcca.ValExhAward mcca_ValExhAward
+								, mcca.*
 							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
 								inner join Mst_CampainCriteriaAward mcca --//[mylock]
 									on t.CampaignCrCode = mcca.CampaignCrCode
@@ -314,12 +300,11 @@ namespace Demo.Lab.Biz
 				{
 					#region // bGet_Mst_CampainCriteriaAwardDtl:
 					zzB_Select_Mst_CampainCriteriaAwardDtl_zzE = CmUtils.StringUtils.Replace(@"
-							---- Mst_CampainCriteriaScope:
+							---- Mst_CampainCriteriaAwardDtl:
 							select
 								t.MyIdxSeq
-								, mccad.POSMCode mccad_POSMCode 
+								, mccad.*
 								, mposm.POSMName mposm_POSMName
-								, mccad.QtyAward mccad_QtyAward
 								, mposm.POSMUnitType mposm_POSMUnitType
 							from #tbl_Mst_CampainCriteriaScope_Filter t --//[mylock]
 								inner join Mst_CampainCriteriaScope mccs --//[mylock]
@@ -329,7 +314,7 @@ namespace Demo.Lab.Biz
 								left join Mst_CampainCriteriaAwardDtl mccad --//[mylock]
 									on mcca.CampaignCrAwardCode = mccad.CampaignCrAwardCode
 								left join Mst_POSM mposm --//[mylock]
-									on mcep.POSMCode = mposm.POSMCode
+									on mccad.POSMCode = mposm.POSMCode
 							order by t.MyIdxSeq asc
 							;
 						"
@@ -611,8 +596,6 @@ namespace Demo.Lab.Biz
 							, mcc.CampaignCrCode
 						into #tbl_Mst_CampainCriteria_Filter_Draft
 						from Mst_CampainCriteria mcc --//[mylock]
-							left join Mst_CampainCriteriaScope mccs --//[mylock]
-								on mcc.CampaignCrCode = mccs.CampaignCrCode
 						where (1=1)
 							zzB_Where_strFilter_zzE
 						order by mcc.CampaignCrCode asc
@@ -675,8 +658,8 @@ namespace Demo.Lab.Biz
 							---- Mst_CampainCriteria:
 							select
 								t.MyIdxSeq
-								, mccs.LevelCode mccs_LevelCode
-								, mccs.CampainCritScopeDesc mccs_CampainCritScopeDesc
+								, mccs.LevelCode 
+								, mccs.CampainCritScopeDesc 
 								, msst.SSTypeName msst_SSTypeName
 							from #tbl_Mst_CampainCriteria_Filter t --//[mylock]
 								inner join Mst_CampainCriteria mcc --//[mylock]

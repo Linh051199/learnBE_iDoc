@@ -4770,6 +4770,74 @@ namespace Demo.Lab.WS
 		}
 		#endregion
 
+		#region // Mst_StarShopHist:
+
+		[WebMethod]
+		public object[] Mst_StarShopHist_Create(
+			string strGwUserCode
+			, string strGwPassword
+			, string strTid
+			, string strSessionId
+			////
+			, object objSSGrpCode
+			, object objSSBrandCode
+			, object objSSTypeName
+			, object objSSRate
+			)
+		{
+			// Temp:
+			string strFunctionName = "Mst_StarShopHist_Create";
+
+			#region // Check:
+			// Check Init:
+			if (_mdsInitError != null) return WSReturn(_mdsInitError);
+			string strErrorCodeDefault = TError.ErrDemoLab.CmSys_SessionPreInitFailed;
+			DataSet mdsFinal = CmUtils.CMyDataSet.NewMyDataSet(strTid);
+			ArrayList alParamsCoupleError = new ArrayList(new object[]{
+				"strFunctionName", strFunctionName
+				});
+			DataRow drSession = null;
+
+			try
+			{
+				// Check all:
+				TUtils.CConnectionManager.CheckAllCondition(
+					_biz._cf.nvcParams // nvcParams
+					, _biz._cf.sess // ss
+					, ref alParamsCoupleError // alParamsCoupleError
+					, strGwUserCode // strGwUserCode
+					, strGwPassword // strGwPassword
+					, strSessionId // strSessionId
+					, out drSession // drSession
+					);
+
+				// Init SessionInfo:
+				_biz._cf.sinf = new TBiz.CSessionInfo(drSession);
+			}
+			catch (Exception exc)
+			{
+				return WSReturn(TUtils.CProcessExc.Process(
+					ref mdsFinal // mdsFinal
+					, exc // exc
+					, strErrorCodeDefault // strErrorCode
+					, alParamsCoupleError.ToArray() // arrobjErrorParams
+					));
+			}
+			#endregion
+
+			// Return Good:
+			return WSReturn(_biz.Mst_StarShopHist_Create(
+			strTid
+			, drSession
+			//// 
+			, objSSGrpCode
+			, objSSBrandCode
+			, objSSTypeName
+			, objSSRate
+			));
+		}
+		#endregion
+
 		#region // Mst_CampainCriteria:
 		[WebMethod]
 		public object[] Mst_CampainCriteria_Get(
@@ -5336,6 +5404,7 @@ namespace Demo.Lab.WS
 			, string strFt_WhereClause
 			//// Return:
 			, string strRt_Cols_Aud_Campaign
+			, string strRt_Cols_Aud_CampaignDoc
 			, string strRt_Cols_Aud_CampaignDBPOSMDtl
 			)
 		{
@@ -5389,6 +5458,7 @@ namespace Demo.Lab.WS
 			, strFt_WhereClause
 			//// Return:
 			, strRt_Cols_Aud_Campaign
+			, strRt_Cols_Aud_CampaignDoc
 			, strRt_Cols_Aud_CampaignDBPOSMDtl
 			));
 		}
